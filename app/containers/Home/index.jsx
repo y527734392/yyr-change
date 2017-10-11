@@ -1,7 +1,8 @@
 import React from 'react'
 
 import Banner from './Mod/Banner'
-import Songs from './Mod/Songs'
+import Songs from './Mod/Songs/'
+import UserInfo from './Mod/UserInfo'
 
 /**
  * voter
@@ -17,38 +18,47 @@ class Home extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            data:false
+            data:false,
+            initDone:false
         }
     }
     render() {
         return (
             <div>
-                <Banner yt-data-pic={this.state.data.focus}/>
-                <div>
-                    <div>
-                        <Songs yt-data-title="最新单曲" yt-data-songs={this.state.data.suggest_songs} />
+            {
+                this.state.initDone
+                ? <div className="home">
+                    <Banner yt-data-pic={this.state.data.focus}/>
+                    <div className="home-news clearfix">
+                        <div className="lf">
+                            <Songs yt-data-title="最新单曲" yt-data-songs={this.state.data.suggest_songs} yt-data-class="songlist" />
+                            <Songs yt-data-title="最新专辑" yt-data-songs={this.state.data.suggest_albums} yt-data-class="albumlist" />
+                        </div>
+                        <div className="userInfo">
+                            <UserInfo />
+                        </div>
                     </div>
-                    <div>
-                    </div>
-                </div>
                 {/*
-                <div>
-                    <div>
-                        <Songs />
-                        <Albums />
-                    </div>
-                    <div>
-                        <Webappinfo />
-                    </div>
+                 <div>
+                 <div>
+                 <Songs />
+                 <Albums />
+                 </div>
+                 <div>
+
+                 </div>
+                 </div>
+                 <div>
+                 <div>
+                 <Artist />
+                 </div>
+                 <div>
+                 <MusicClassify />
+                 </div>
+                 </div>*/}
                 </div>
-                <div>
-                    <div>
-                        <Artist />
-                    </div>
-                    <div>
-                        <MusicClassify />
-                    </div>
-                </div>*/}
+                : <div>正在加载...</div>
+            }
             </div>
         )
     }
@@ -59,7 +69,8 @@ class Home extends React.Component {
         }).then((rs)=>{
             if(rs.error_code === 22000){
                 this.setState({
-                    data: rs.data
+                    data: rs.data,
+                    initDone: true
                 })
             }
         });

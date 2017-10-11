@@ -1,0 +1,184 @@
+/**
+ * Created by Muyi on 17/10/11.
+ */
+.userInfo {
+    float: right;
+    width: 270px;
+    .login-info{
+        margin-top: 95px;
+        height: 469px;
+        padding: 0 29px;
+        border: 1px solid @e;
+        .userBar_loading {
+            width: 100%;
+            padding-top: 30%;
+            background: url('/static/img/core/loading_data.gif') no-repeat center;
+        }
+        .user-info-new{
+            position: relative;
+            padding-top: 57px;
+            min-height: 118px;
+            padding-bottom: 5px;
+            .user-avatar{
+                position: absolute;
+                top: -55px;
+                left: 50%;
+                margin-left: -55px;
+                cursor: pointer;
+                img{
+                    width: 80px;
+                    height: 80px;
+                    border: 15px solid #fff;
+                    border-radius: 100%;
+                }
+            }
+            .login-title{
+                text-align: center;
+                font-size: 18px;
+                display: block;
+                margin-top: 15px;
+            }
+            .user-data-info{
+                padding-top: 15px;
+
+                table{
+                    width: 100%;
+                    td{
+                        text-align: center;
+                        position: relative;
+                        .data{
+                            display:block;
+                            color: @0;
+                            margin-bottom: 5px;
+                            font-size: 14px;
+                        }
+                        .title{
+                            color: @9;
+                            font-size: 14px;
+                        }
+                        i{
+                            position: absolute;
+                            width: 1px;
+                            height: 12px;
+                            display: inline-block;
+                            background: @9;
+                            left: 0;
+                            bottom: 4px;
+                        }
+                    }
+                }
+            }
+            .user-btn{
+                text-align: center;
+                margin-top: 10px;
+                max-height: 26px;
+                a{
+                    border: 1px solid @e;
+                    color: @9;
+                    line-height: 26px;
+                    height: 26px;
+                    display: inline-block;
+                    padding: 0 40px;
+                    border-radius: 25px;
+                    margin-left: 12px;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                    &:first-child{
+                        margin-left: 0;
+                    }
+                }
+            }
+            .login-btn{
+
+
+                text-align: center;
+                margin-top:23px;
+                a{
+                    border: 1px solid #eee;
+                    color: #999;
+                    line-height: 26px;
+                    height: 26px;
+                    display: inline-block;
+                    padding: 0 40px;
+                    border-radius: 25px;
+                    text-decoration: none;
+                }
+
+            }
+        }
+        .recom-musician{
+            padding: 20px 0 5px;
+            .title{
+                font-size: 14px;
+                color: @9;
+                padding-bottom: 10px;
+            }
+            .musician-list{
+                height: 35px;
+                dt{
+                    float: left;
+                    img{
+                        display: block;
+                        border-radius: 100%;
+                    }
+                }
+                dd{
+                    .overflowall();
+                    padding-left: 5px;
+                    overflow: hidden;
+                    line-height: 25px;
+                    a{
+                        font-size: 14px;
+                        color: @0;
+                    }
+                }
+            }
+        }
+        .musician-number{
+            .musician-number-text{
+                font-size: 14px;
+                color: @9;
+                margin-bottom: 14px;
+                line-height: 27px;
+                span{
+                    color: @f50;
+                }
+            }
+            #sidebarBtnArea {
+                width: 215px;
+                height: 44px;
+
+                .apply-btn{
+                    display: block;
+                    background: @f50;
+                    height: 44px;
+                    line-height: 44px;
+                    font-size: 14px;
+                    color: @f;
+                    text-align: center;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+                .apply-wait{
+                    background: #545454;
+                }
+
+            }
+        }
+    }
+
+    .login-info.logined-userinfo {
+        .login-title{
+            margin-top: 0;
+        }
+        .user-info{
+            padding-top:50px;
+            height: 135px;
+        }
+        .recom-musician{
+            padding-top: 10px;
+        }
+    }
+}
