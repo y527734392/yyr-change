@@ -56,7 +56,7 @@ var uri = 'http://yt.com:' + port;
 
 //接口转发
 var options = {
-    target: 'http://192.168.31.246:8088', // target host
+    target: 'http://192.168.217.16:8088', // target host
     changeOrigin: true,               // needed for virtual hosted sites
     /*ws: true,                         // proxy websockets
     pathRewrite: {
@@ -67,8 +67,8 @@ var options = {
         'dev.localhost:3000' : 'http://localhost:8000'
     }*/
 };
-//var exampleProxy = proxy(options);
-//app.use('/api/*', exampleProxy);
+var exampleProxy = proxy(options);
+app.use('/app/*', exampleProxy);
 
 
 

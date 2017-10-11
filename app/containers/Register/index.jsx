@@ -5,7 +5,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import util from '../../utils/help'
+import util from 'utils/help'
 let _ = new util();
 
 class Register extends React.Component {

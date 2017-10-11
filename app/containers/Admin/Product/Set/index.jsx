@@ -7,7 +7,7 @@ import EasyForm, { Field, FieldGroup } from 'react-easyform';
 
 import Subnav from '../../../Subnav'
 import Mod from './Mod'
-import util from '../../../../utils/help'
+import util from 'utils/help'
 let _ = new util();
 
 class Set extends React.Component {

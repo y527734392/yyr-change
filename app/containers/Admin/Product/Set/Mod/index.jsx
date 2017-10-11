@@ -5,7 +5,7 @@
 import React from 'react'
 import EasyForm, { Field, FieldGroup } from 'react-easyform';
 
-import util from '../../../../../utils/help'
+import util from 'utils/help'
 let _ = new util();
 
 class Mod extends React.Component {

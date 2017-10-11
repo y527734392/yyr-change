@@ -3,8 +3,9 @@ import React from 'react'
 import { Router, Route, IndexRoute } from 'react-router'
 //import {BrowserRouter as Router,Route,Link,HashRouter,BrowserRouter,Switch,Provider,Redirect} from 'react-router-dom'
 
-//import App from '../containers/App'
+import App from '../containers/App'
 import Home from '../containers/Home'
+
 import Login from '../containers/Login'
 import Register from '../containers/Register'
 
@@ -24,8 +25,8 @@ class RouteMap extends React.Component {
         {console.log(this.props.history)}
         return (
             <Router history={this.props.history}>
-                <Route path='/' component={Home}>
-                        <IndexRoute component={Banner}/>
+                <Route path='/' component={App}>
+                        <IndexRoute component={Home}/>
                         <Route exact strict path="/admin/banner" component={Banner} />
                         <Route exact strict path="/admin/recommend" component={Recommend} />
                         <Route exact strict path="/admin/product" component={Product} />

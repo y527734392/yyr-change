@@ -1,0 +1,89 @@
+@import './common';
+@import './base';
+
+@footimg : '../../static/img/containers/footer';
+footer {
+	padding: 33px 0 105px;
+	border-top: 1px solid @e;
+	background: @f;
+	hgroup {
+		width: @wideScreenWidth;
+		margin: auto;
+		text-align: center;
+		font-size: 14px;
+		a {
+			color: @0;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.nav {
+			font-size: 0;
+			padding: 20px 0;
+			a {
+				font-size: 14px;
+				border-left: 1px solid @0;
+				height: 14px;
+				line-height: 14px;
+				display: inline-block;
+				padding: 0 25px;
+				color: @0;
+				&:first-child {
+					border-left: none;
+				}
+			}
+		}
+		.foot-logo {
+			width: 29px;
+			height: 32px;
+			display: inline-block;
+			background: url("@{footimg}/footer_logo.svg") no-repeat;
+			background-image: url("@{footimg}/footer_logo.png");
+			imerge: y_icon;
+		}
+		.connect-text {
+			padding-bottom: 15px;
+		}
+		.connect {
+			font-size: 0px;
+			margin-top: 30px;
+			.weibo,
+			.weixin,
+			.down-app {
+				width: 90px;
+				height: 26px;
+				display: inline-block;
+				imerge: y_icon;
+				overflow: hidden;
+				text-indent: -999px;
+			}
+			.weibo {
+				background: url("/static/img/btn/btn_sina.png") no-repeat;
+				margin-right: 10px;
+				imerge: y_icon;
+			}
+			.weixin {
+				background: url("/static/img/btn/btn_weixin.png") no-repeat;
+				margin-right: 10px;
+				imerge: y_icon;
+			}
+			.down-app {
+				background: url("/static/img/btn/btn_baidu.png") no-repeat;
+				imerge: y_icon;
+			}
+			.popover-content {
+				padding: 9px 14px;
+				.pic {
+					width: 150px;
+					height: 150px;
+					background: url("/static/img/logo/weixin_yyr.png") no-repeat;
+				}
+				p {
+					line-height: 1.5;
+					color: @0;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
