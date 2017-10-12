@@ -3,6 +3,8 @@ import React from 'react'
 import Banner from './Mod/Banner'
 import Songs from './Mod/Songs/'
 import UserInfo from './Mod/UserInfo'
+import Artist from './Mod/Artist'
+import MusicClassify from './Mod/MusicClassify'
 
 /**
  * voter
@@ -36,6 +38,12 @@ class Home extends React.Component {
                         </div>
                         <div className="userInfo">
                             <UserInfo />
+                        </div>
+                    </div>
+                    <div className="home-artistsAndClass clearfix">
+                        <div className="inner">
+                            <Artist yt-data-title="推荐音乐人" yt-data-artist={this.state.data.suggest_artists} />
+                            <MusicClassify />
                         </div>
                     </div>
                 {/*

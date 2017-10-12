@@ -1,0 +1,153 @@
+/**
+ * Created by Muyi on 17/10/12.
+ */
+.home-artistsAndClass {
+    width: 100%;
+    min-width: 1220px;
+    background: #f8f8f8;
+    padding: 40px 0 45px;
+    .inner {
+        width: 1220px;
+        margin: auto;
+
+        .home-artists {
+            width: 950px;
+            float: left;
+            .artists-list{
+                li{
+                    float: left;
+                    width: 200px;
+                    height: 275px;
+                    background: @f;
+                    margin-right: 30px;
+                    padding-top: 25px;
+                    text-align: center;
+
+                    .musician-avatar{
+                        width: 138px;
+                        height: 138px;
+                        margin: 0 auto;
+                        position: relative;
+                        overflow: hidden;
+                        border:1px solid #eee;
+                        border-radius: 100%;
+                        .layout{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: #000;
+                            opacity: 0.5;
+                            filter:alpha(opacity=50);
+                            display: none;
+                        }
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                        .bullets{
+                            position: absolute;
+                            display: inline;
+                            white-space: pre;
+                            left: 180px;
+                            height: 28px;
+                            line-height: 28px;
+                            font-size: 14px;
+                            font-weight: normal;
+                            color: white;
+                        }
+                        &:hover{
+                            .layout{
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    .name{
+                        display: block;
+                        color: @0;
+                        font-size: 14px;
+                        font-weight: bold;
+                        margin-top: 15px;
+                        height: 21px;
+                        overflow: hidden;
+                    }
+                    .msician-style{
+                        height: 20px;
+                        overflow: hidden;
+                        display: inline-block;
+                        color: @9;
+                        margin-top: 4px;
+                        &:hover{
+                            text-decoration: underline!important;
+                        }
+                    }
+                    .delegate-song{
+                        margin-top: 27px;
+                        a{
+                            color: @0;
+                            vertical-align: middle;
+                        }
+                        .play-btn{
+                            vertical-align: middle;
+                            margin-left: 25px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .home-musicClassify {
+
+            .musicClassify-list {
+                width: 270px;
+                float: right;
+                background: #fff;
+                margin-top: 61px;
+                height: 195px;
+                margin-bottom: 22px;
+                h4 {
+                    &.title {
+                        font-size: 12px;
+                        color: #333;
+                        padding: 15px 0 20px;
+                        line-height: 20px;
+                        margin-bottom: 0;
+                        text-align: center;
+                        position: relative;
+                    }
+                }
+                ul.lists {
+                    li {
+                        float: left;
+                        width: 90px;
+                        text-align: center;
+                        margin-bottom: 15px;
+                        position: relative;
+
+                        p {
+                            color: @9;
+                        }
+                        i {
+                            display: inline-block;
+                            background: @9;
+                            width: 1px;
+                            height: 12px;
+                            position: absolute;
+                            top: 3px;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+            .topics {
+                width: 270px;
+                height: 85px;
+                display: inline-block;
+                background: url('@{homeimg}/live_entry.jpg') no-repeat;
+            }
+
+        }
+    }
+}

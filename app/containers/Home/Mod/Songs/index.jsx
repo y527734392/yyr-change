@@ -34,7 +34,7 @@ class Songs extends React.Component {
 
         return (
             <div className={"home-newlist home-"+ this.props['yt-data-class']}>
-                <h3 className="title">{this.props['yt-data-title']}</h3>
+                <h3 className="home-title title">{this.props['yt-data-title']}</h3>
                 <ul className="cf clearfix">
                     {items}
                 </ul>
