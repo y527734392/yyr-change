@@ -1,0 +1,47 @@
+/**
+ * Created by Muyi on 17/10/13.
+ */
+@import '../../common';
+@import '../../base';
+@import './artistInfo';
+
+.indie-content {
+    width: 1220px;
+    margin: auto;
+    .inner {
+        position: relative;
+        margin-bottom: 20px;
+        padding-top: 45px;
+
+
+        .indie-order {
+            padding: 20px 0;
+            li {
+                width: 85px;
+                height: 28px;
+                float: left;
+                color: @3;
+                margin-right: 15px;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 28px;
+                    line-height: 28px;
+                    color: @6;
+                    text-decoration: none;
+                    border: 1px solid #e9e8e4;
+                    background: @f;
+                    text-align: center;
+                    text-decoration: none;
+                }
+                &.on {
+                    a {
+                        color: @f;
+                        border-color: #ff0f50;
+                        background: #ff0f50;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -25,7 +25,7 @@ class Header extends React.Component {
                 },
                 'indie' : {
                     'title' : '歌手',
-                    'url' : '/indie/musician/all/hot/all'
+                    'url' : '/indie/musician'
                 },
                 'project':{
                     'title' : '众筹',

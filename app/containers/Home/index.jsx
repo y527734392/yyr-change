@@ -29,7 +29,7 @@ class Home extends React.Component {
             <div>
             {
                 this.state.initDone
-                ? <div className="home">
+               ?<div className="home">
                     <Banner yt-data-pic={this.state.data.focus}/>
                     <div className="home-news clearfix">
                         <div className="lf">
@@ -46,24 +46,6 @@ class Home extends React.Component {
                             <MusicClassify />
                         </div>
                     </div>
-                {/*
-                 <div>
-                 <div>
-                 <Songs />
-                 <Albums />
-                 </div>
-                 <div>
-
-                 </div>
-                 </div>
-                 <div>
-                 <div>
-                 <Artist />
-                 </div>
-                 <div>
-                 <MusicClassify />
-                 </div>
-                 </div>*/}
                 </div>
                 : <div>正在加载...</div>
             }
