@@ -1,0 +1,121 @@
+/**
+ * Created by Muyi on 17/10/12.
+ */
+
+.song-list {
+    width: 1000px;
+    margin-bottom: 20px;
+    float: left;
+    .lf,.rf {
+        float: left;
+        padding-left:30px;
+        border-left: 1px solid @f0;
+    }
+    .rf {
+        float: right;
+    }
+    .songs-content {
+        width: 450px;
+        margin-bottom: 60px;
+        .songs-title-info {
+            line-height: 20px;
+            position: relative;
+            margin-bottom: 20px;
+            .title {
+                float: left;
+                display: inline;
+                font-weight: bold;
+                font-size: 18px;
+                margin-right: 5px;
+            }
+            .split {
+                display: inline-block;
+                vertical-align: middle;
+                width: 1px;
+                height: 10px;
+                overflow: hidden;
+                background: @c;
+                margin: 0 10px;
+                color: @c;
+            }
+            .more-info {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+        }
+        .songs-con {
+            ul {
+                li {
+                    height: 46px;
+                    line-height: 46px;
+                    position: relative;
+                    vertical-align: top;
+                    padding: 0 10px 0 5px;
+                    border-bottom: 1px solid @f0;
+                    border-top: 1px solid @f0;
+                    margin-top: -1px;
+                    .num {
+                        width: 35px;
+                        float: left;
+                        display: inline;
+                        color: @3;
+                        font-size: 24px;
+                        &.top1 {
+                            color: #c33;
+                        }
+                        &.top2 {
+                            color: #ef9525;
+                        }
+                        &.top3 {
+                            color: #f5de62;
+                        }
+                    }
+                    .status {
+                        width: 20px;
+                        height: 20px;
+                        float: left;
+                        display: inline;
+                        position: relative;
+                        top: 50%;
+                        margin: -5px 5px 0 5px;
+                        overflow: hidden;
+                        background: @0;
+                    }
+                    .song—info {
+                        float: left;
+                        .title {
+                            width: 160px;
+                            .overflowall();
+                            float: left;
+                            display: inline;
+                            font-size: 14px;
+                            margin-right: 20px;
+                        }
+                        .artist {
+                            width: 100px;
+                            margin-right: 10px;
+                            .overflowall();
+                            float: left;
+                            display: inline;
+                            height: 100%;
+                            line-height: 46px;
+                            position: relative;
+                            color: @9;
+                        }
+                    }
+                    .play-num {
+                        float: left;
+                        display: inline;
+                        width: 80px;
+                        height: 100%;
+                        text-align: right;
+                        position: relative;
+                        color: @9;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -70,8 +70,8 @@ class MusicClassify extends React.Component {
                     </ul>
                 </div>
                 <div className="topics">
-                    <a href="http://y.baidu.com/topic/alltopic" target="_blank">
-                    </a>
+                    <Link to="/topic/alltopic">
+                    </Link>
                 </div>
             </div>
         )

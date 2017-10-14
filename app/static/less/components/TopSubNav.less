@@ -1,0 +1,41 @@
+/**
+ * Created by Muyi on 17/10/12.
+ */
+@import '../common';
+@import '../base';
+
+.top-subnav {
+    float: left;
+    width: 210px;
+    li {
+        position: relative;
+        margin: 0 40px 4px 0;
+        padding: 9px 0;
+        a, span {
+            display: block;
+            padding-left: 30px;
+        }
+        &.category {
+            font-size: 16px;
+            font-weight: bold;
+            a, span {
+                padding-left: 15px;
+            }
+        }
+
+        a{
+            border-left: 3px solid @f;
+        }
+
+        &.on {
+            span {
+                height: 20px;
+                border-left: 3px solid @f50;
+                color: @f50;
+                line-height: 20px;
+            }
+
+        }
+
+    }
+}

@@ -1,0 +1,47 @@
+/**
+ * Created by Muyi on 17/10/13.
+ */
+@import '../common';
+@import '../base';
+
+.indie-subNav {
+    height: 90px;
+    position: relative;
+    padding: 15px 0 15px 0;
+    background: @f8;
+    color: @3;
+    border: 1px solid @f8;
+    .indie-lists {
+        padding: 10px 0;
+        .title {
+            float: left;
+            display: inline;
+            height: 14px;
+            line-height: 14px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 3px 20px 0 20px;
+            width: 50px;
+            color: @3;
+            border-right: 1px solid #d6d5d0;
+        }
+        ul {
+            li {
+                float: left;
+                margin-bottom: 5px;
+                white-space: nowrap;
+                a {
+                    color: @3;
+                    font-size: 12px;
+                    line-height: 12px;
+                    padding: 5px;
+                }
+                &.on {
+                    a {
+                        border-bottom: 2px solid #ff0f50;
+                    }
+                }
+            }
+        }
+    }
+}

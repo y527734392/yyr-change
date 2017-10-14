@@ -5,6 +5,10 @@ module.exports = {
   // 模块别名的配置，为了使用方便，一般来说所有模块都是要配置一下别名的
   alias: {
     /* 各种目录 */
+
+    /* components */
+    components: path.resolve(dirVars.srcRootDir, 'components'),
+
     /* img */
     imgDir: path.resolve(dirVars.publicDir, 'img'),
 

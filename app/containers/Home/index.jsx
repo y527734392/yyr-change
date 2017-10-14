@@ -33,7 +33,7 @@ class Home extends React.Component {
             <div>
             {
                 this.state.initDone
-                ? <div className="home">
+               ?<div className="home">
                     <Banner yt-data-pic={this.state.data.focus}/>
                     <div className="home-news clearfix">
                         <div className="lf">
