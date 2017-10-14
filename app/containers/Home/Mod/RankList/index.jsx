@@ -32,7 +32,7 @@ class RankList extends React.Component {
 			}
 		});*/}
 		return (
-			<div className="home-crowds">
+			<div className="home-ranklist-inner">
 				<h3 className="title home-title">{this.props['yt-data-title']}</h3>
 
 			</div>
