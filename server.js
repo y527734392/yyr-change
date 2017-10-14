@@ -40,7 +40,7 @@ app.use(hotMiddleware);
 
 
 
-var port = 8600;
+var port = 8700;
 // webpack插件，监听html文件改变事件
 compiler.plugin('compilation', function (compilation) {
     compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
