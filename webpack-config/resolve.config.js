@@ -9,6 +9,21 @@ module.exports = {
     /* components */
     components: path.resolve(dirVars.srcRootDir, 'components'),
 
+    /* actions */
+    actions: path.resolve(dirVars.srcRootDir, 'actions'),
+
+    /* config */
+    config: path.resolve(dirVars.srcRootDir, 'config'),
+
+    /* reducers */
+    reducers: path.resolve(dirVars.srcRootDir, 'reducers'),
+
+    /* store */
+    store: path.resolve(dirVars.srcRootDir, 'store'),
+
+    /* vendor */
+    vendor: path.resolve(dirVars.srcRootDir, 'vendor'),
+
     /* img */
     imgDir: path.resolve(dirVars.publicDir, 'img'),
 

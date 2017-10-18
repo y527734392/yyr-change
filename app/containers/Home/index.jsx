@@ -5,7 +5,7 @@ import Songs from './Mod/Songs/'
 import UserInfo from './Mod/UserInfo'
 import Artist from './Mod/Artist'
 import MusicClassify from './Mod/MusicClassify'
-import Crowds from './Mod/Crowds'
+import Crowds from 'components/Crowds'
 import Songlist from './Mod/Songlist'
 import RankList from './Mod/RankList'
 import Event from './Mod/Event'
@@ -16,6 +16,7 @@ import Event from './Mod/Event'
 import util from 'utils/help'
 let _ = new util();
 
+//import 'vendor/md5.js';
 
 import 'lessDir/containers/Home';
 
@@ -51,7 +52,7 @@ class Home extends React.Component {
                         </div>
                     </div>
                     <div className="home-crowd clearfix">
-                        <Crowds yt-data-title="推荐众筹" yt-data-crowds={this.state.data.suggest_crowd} />
+                        <Crowds yt-data-title="推荐众筹" yt-data-num='3' yt-data-crowds={this.state.data.suggest_crowd} />
                     </div>
                     <div className="home-rankList clearfix">
                         <div className="inner">
@@ -61,25 +62,6 @@ class Home extends React.Component {
                     <div className="home-events">
                         <Event yt-data-title="推荐演出" yt-data-events={this.state.data.suggest_events} />
                     </div>
-
-                {/*
-                 <div>
-                 <div>
-                 <Songs />
-                 <Albums />
-                 </div>
-                 <div>
-
-                 </div>
-                 </div>
-                 <div>
-                 <div>
-                 <Artist />
-                 </div>
-                 <div>
-                 <MusicClassify />
-                 </div>
-                 </div>*/}
                 </div>
                 : <div>正在加载...</div>
             }

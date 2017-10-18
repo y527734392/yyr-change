@@ -18,6 +18,9 @@ import SongClassDay from '../containers/Top/Mod/SongClass/SongClassDay' //日榜
 import Indie from '../containers/Indie' //基础
 import ArtistAll from '../containers/Indie/Mod/ArtistAll' //基础
 
+/*众筹*/
+import Project from '../containers/Project' //基础
+
 /*import Login from '../containers/Login'
 import Register from '../containers/Register'
 
@@ -48,6 +51,7 @@ class RouteMap extends React.Component {
                         <Route path="/indie/musician" component={Indie} >
                             <IndexRoute component={ArtistAll}/>
                         </Route>
+                        <Route path="/project" component={Project} />
                     {/*<Route exact strict path="/admin/banner" component={Banner} />
                         <Route exact strict path="/admin/recommend" component={Recommend} />
                         <Route exact strict path="/admin/product" component={Product} />

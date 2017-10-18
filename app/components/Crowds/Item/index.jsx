@@ -27,20 +27,24 @@ class Items extends React.Component {
 			label_value: {1:"其他",2:"音乐周边",3:"唱片制作"},
 			end_value: this.props['yt-data-json']['project_status']['status'] != 8 ? "":0,
 			lefttime_value: this.props['yt-data-json']['overplus_time']=="已结束"? "0":this.props['yt-data-json']['overplus_time']+"天",
-			mask_value: this.props['yt-data-json']['overplus_time']=="已结束"? (<p className="end">已结束</p>):"",
+			mask_value: this.props['yt-data-json']['overplus_time']=="已结束"? (<p className="end">已结束</p>): <p className="detail">查看详情</p>,
+			mask: this.props['yt-data-json']['overplus_time']=="已结束"? 'maskend' :'',
 		}
 
 	}
 	render() {
 		return (
-			<li>
-				<a className="crowd-avatar" data-aid="">
-					<img src={this.props['yt-data-json']['image']} alt="" />
-					<div className="mask">
-						{this.state.mask_value}
-					</div>
-				</a>
-				<a className="title" title="">{this.props['yt-data-json']['title']}</a>
+			<li className="pj_item">
+				<div className="picbox">
+					<Link className="pic">
+						<img className="lazy" src={this.props['yt-data-json']['image']} />
+						<div className={"mask "+this.state.mask}>
+							{this.state.mask_value}
+						</div>
+					</Link>
+				</div>
+				<h4 className="title"><Link>{ this.props['yt-data-json'].title }</Link></h4>
+
 				<div className="other">
 					<span className="typebtn">{this.state.typebtn_value}</span>
 					<span className="label">{this.state.label_value[this.props['yt-data-json']['type']]}</span>
