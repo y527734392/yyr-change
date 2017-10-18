@@ -28,7 +28,7 @@ class ArtistInfoCon extends React.Component {
 
     render() {
         var items = [];
-        this.props['yt-data-json']['list'].map((list,index)=>{
+        this.props['yt-data-json']['artist_list'].map((list,index)=>{
             items.push(<Item key={index} yt-data-json={list} yt-data-index={index} />)
         });
         return (

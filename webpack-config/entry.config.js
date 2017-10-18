@@ -7,11 +7,15 @@ var dirVars = require('./base/dir-vars.config.js');
 var pageArr = require('./base/page-entries.config.js');
 var configEntry = {};
 var devClient = path.resolve(dirVars.webapckConfigDir , 'dev-client');
-//pageArr.forEach((page) => {
-//    var extras = [devClient];
-//    configEntry[page] = extras.concat(path.resolve(dirVars.pagesDir, page + '/index'));
-//});
+
 
 var extras = [devClient];
 configEntry['index'] = extras.concat(path.resolve(dirVars.srcRootDir, 'index'));
+
+var vendors =[];
+pageArr.forEach((vendor) => {
+    vendors = vendors.concat(path.resolve(dirVars.vendorDir, vendor));
+    configEntry['vendor'] = vendors;
+});
+console.log(configEntry);
 module.exports = configEntry;

@@ -85,6 +85,22 @@ class Utils {
 		}
 		return fmt;
 	}
+    Login( sta,tpl ) {
+        var TPASS = new Tpass();
+        var tar = sta === 2 ? '_blank' : (sta === 0 ? 'pop' : '_self');
+        var param = {
+            tpl: tpl,
+            u: loc.href,
+            target: tar,
+            staticPage: location.protocol + '//' + location.host + '/static/html/tpassjump.html'
+        };
+        TPASS.login(param, function (d) {
+            _m.utils.new_userinfo();
+            _m.cfg.login_log = 0;
+            window.MiniPipe.refreshBlock();
+
+        });
+    }
 }
 
 export default Utils

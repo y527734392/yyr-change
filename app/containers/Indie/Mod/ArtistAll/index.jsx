@@ -51,7 +51,7 @@ class ArtistAll extends React.Component {
         )
     }
     componentWillMount(){
-        _.api('/app/indie/artistlist',{
+        _.api('/indie/artist/list',{
             method:'post',
         }).then((rs)=>{
             if(rs.error_code === 22000){

@@ -4,16 +4,29 @@
 
 import React from 'react'
 import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+
+import * as Actions from 'actions/index'
 
 import Nav from './Nav'
+import UserInfo from './UserInfo'
+//let Tpass = require('http://static0.qianqian.com/pc-tpass/prd/scripts/jsdk/tpass-2.0.0.js');
+//'//static0.qianqian.com/pc-tpass/prd/scripts/jsdk/tpass-2.0.0.js'
 
 import util from 'utils/help'
 let _ = new util();
 
 import 'lessDir/head';
 
-
 class Header extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            initDone:false
+        }
+    }
     render() {
         return (
             <div id="header" className="sns-header">
@@ -34,11 +47,54 @@ class Header extends React.Component {
                         </div>
                     </section>
                     <section className="user-info">
-                        <p className="loading_data"></p>
+                        <div onClick={this.login.bind(this)}>登陆</div>
+                        <UserInfo info={this.props.userinfo} />
                     </section>
                 </hgroup>
             </div>
         )
     }
+    componentWillMount(){
+        _.api('/app/user/info',{
+            method:'post',
+        }).then((rs)=>{
+
+            if(rs.error_code === 22000){
+                this.setState({
+                    initDone: true
+                });
+                this.props.Actions.login(rs.data)
+            }
+        });
+    }
+    /*componentDidMount() {
+        console.log(123);
+        // 模拟登陆
+        this.props.Actions.login({
+            un: 'abc'
+        })
+    }*/
+
+    login(){
+        console.log(1234)
+    }
+
+
 }
-export default Header
+
+function mapStateToProps(state) {
+    return {
+        userinfo: state.userInfo
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        Actions: bindActionCreators(Actions, dispatch)
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Header)

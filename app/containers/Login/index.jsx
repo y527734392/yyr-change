@@ -8,7 +8,7 @@ import { Link } from 'react-router'
 import util from 'utils/help'
 let _ = new util();
 
-import '../../vendor/md5.js';
+import 'vendorDir/md5.js';
 class Login extends React.Component {
     render() {
         return (

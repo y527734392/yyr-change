@@ -17,7 +17,7 @@ let _ = new util();
 /**
  * css
  */
-//import 'lessDir/xxxx';
+import 'lessDir/components/Crowds';
 
 //content
 class Crowds extends React.Component {
@@ -27,13 +27,19 @@ class Crowds extends React.Component {
 	render() {
 		var items = [];
 		this.props['yt-data-crowds'].map((list,index)=>{
-			if (index<=3){
+			if (this.props['yt-data-crowds'] && index<= this.props['yt-data-num']){
+				items.push(<Item key={index} yt-data-json={list} yt-data-class={this.props['yt-data-class']} />)
+			}else{
 				items.push(<Item key={index} yt-data-json={list} yt-data-class={this.props['yt-data-class']} />)
 			}
 		});
 		return (
-			<div className="home-crowd-inner">
-				<h3 className="title home-title">{this.props['yt-data-title']}</h3>
+			<div className="crowd-inner">
+				{
+					this.props['yt-data-title']
+					?<h3 className="title home-title">{this.props['yt-data-title']}</h3>
+					:''
+				}
 				<ul className="crowds-list clearfix">
 					{items}
 				</ul>
