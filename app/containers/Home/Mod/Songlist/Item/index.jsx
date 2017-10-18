@@ -7,6 +7,7 @@
  */
 import React from 'react'
 import { Link } from 'react-router'
+import SongItem from './SongItem'
 /**
  * voter
  */
@@ -25,16 +26,18 @@ class Items extends React.Component {
 		this.state = {
 
 		}
-
 	}
 	render() {
 		return (
-			<dl>
+			<dl className="songlist_item">
 				<dt className="songlist_pic">
 					<img src={this.props['yt-data-json']['img_url']} alt="" />
 				</dt>
 				<dd>
-
+					<div className="title-box">
+						<Link>{this.props['yt-data-json']['title']}</Link><span>(12首歌)</span>
+					</div>
+					<div className="show-songs"></div>
 				</dd>
 			</dl>
 

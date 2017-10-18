@@ -53,9 +53,13 @@ class Home extends React.Component {
                     <div className="home-crowd clearfix">
                         <Crowds yt-data-title="推荐众筹" yt-data-crowds={this.state.data.suggest_crowd} />
                     </div>
+                    <div className="home-songlist clearfix">
+                        <Songlist yt-data-title="推荐歌单" yt-data-songlist={this.state.data.suggest_songlist} />
+                    </div>
                     <div className="home-rankList clearfix">
                         <div className="inner">
-
+                            <RankList yt-data-title="原创音乐榜" yt-data-rank={this.state.data.rank_list[0]} />
+                            <RankList yt-data-title="T榜原创榜单" yt-data-rank={this.state.data.rank_list[1]} />
                         </div>
                     </div>
                     <div className="home-events">
