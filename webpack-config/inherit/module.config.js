@@ -24,6 +24,14 @@ module.exports={
             loader: 'exports-loader?window.Zepto!script-loader'
         },
         {
+            test: /\.html$/,
+            include: dirVars.staticDir,
+            loader: 'html-loader',
+            options: {
+                name: 'static/html/[name].[hash].[ext]',
+            },
+        },
+        {
             // 图片加载器，雷同file-loader，更适合图片，可以将较小的图片转成base64，减少http请求
             // 如下配置，将小于8192byte的图片转成base64码
             test: /\.(png|jpg|gif)$/,

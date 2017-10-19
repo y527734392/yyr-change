@@ -55,7 +55,7 @@ compiler.plugin('compilation', function (compilation) {
 var uri = 'http://yt.com:' + port;
 
 //接口转发
-var contxt = ['/app/*','/indie/*'];
+var contxt = ['/app/*','/indie/*','/plaza/*'];
 var options = {
     target: 'http://192.168.217.16:8180', // target host
     changeOrigin: true,               // needed for virtual hosted sites

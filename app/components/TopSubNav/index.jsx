@@ -17,7 +17,7 @@ let _ = new util();
 /**
  * css
  */
-import 'lessDir/components/TopSubNav';
+import 'less/components/TopSubNav';
 
 //content
 class TopSubNav extends React.Component {

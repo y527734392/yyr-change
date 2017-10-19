@@ -16,7 +16,7 @@ let _ = new util();
 /**
  * css
  */
-import 'lessDir/containers/Top';
+import 'less/containers/Top';
 
 //content
 class Top extends React.Component {

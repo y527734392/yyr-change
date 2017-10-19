@@ -18,7 +18,7 @@ let _ = new util();
 /**
  * css
  */
-import 'lessDir/components/IndieSubNav';
+import 'less/components/IndieSubNav';
 
 //content
 class IndieSubNav extends React.Component {

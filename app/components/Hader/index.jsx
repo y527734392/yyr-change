@@ -18,7 +18,7 @@ import UserInfo from './UserInfo'
 import util from 'utils/help'
 let _ = new util();
 
-import 'lessDir/head';
+import 'less/head';
 
 class Header extends React.Component {
     constructor(props, context) {
@@ -47,8 +47,12 @@ class Header extends React.Component {
                         </div>
                     </section>
                     <section className="user-info">
-                        <div onClick={this.login.bind(this)}>登陆</div>
-                        <UserInfo info={this.props.userinfo} />
+                        {
+                            this.state.initDone
+                            ? <UserInfo info={this.props.userinfo} />
+                            :'加载中。。。'
+                        }
+
                     </section>
                 </hgroup>
             </div>
@@ -76,7 +80,19 @@ class Header extends React.Component {
     }*/
 
     login(){
-        console.log(1234)
+        _.login(0,'baidu_musician',()=>{
+            _.api('/app/user/info',{
+                method:'post',
+            }).then((rs)=>{
+
+                if(rs.error_code === 22000){
+                    this.setState({
+                        initDone: true
+                    });
+                    this.props.Actions.login(rs.data)
+                }
+            });
+        });
     }
 
 

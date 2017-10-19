@@ -17,7 +17,7 @@ let _ = new util();
 /**
  * css
  */
-import 'lessDir/components/Crowds';
+import 'less/components/Crowds';
 
 //content
 class Crowds extends React.Component {

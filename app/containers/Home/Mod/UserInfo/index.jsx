@@ -16,7 +16,7 @@ let _ = new util();
 /**
  * css
  */
-//import 'lessDir/xxxx';
+//import 'less/xxxx';
 
 //content
 class ArtistInfo extends React.Component {

@@ -8,7 +8,7 @@ import { Link } from 'react-router'
 import util from 'utils/help'
 let _ = new util();
 
-import 'lessDir/footer';
+import 'less/footer';
 
 
 class Footer extends React.Component {

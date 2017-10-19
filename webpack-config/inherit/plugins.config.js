@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 var dirVars = require('../base/dir-vars.config.js');
 var pageArr = require('../base/page-entries.config.js');
@@ -28,6 +29,15 @@ var configPlugins = [
     /*new webpack.optimize.CommonsChunkPlugin({
         names: ['vendor','manifest'],
     }),*/
+
+
+    new CopyWebpackPlugin([
+        {
+            /* 抽取出静态html部分 */
+            from: path.resolve(dirVars.htmlDir),
+            to: path.resolve(dirVars.buildDir,'static/html'),
+        },
+    ]),
 
     /* 抽取出chunk的css */
     new ExtractTextPlugin('static/css/[name]-[contenthash].css'),
