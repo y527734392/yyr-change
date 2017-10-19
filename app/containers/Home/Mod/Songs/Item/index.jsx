@@ -29,7 +29,7 @@ class Items extends React.Component {
                     <span className="icon-play cover-hook-play"></span>
                 </div>
                 <h6 className="name" title={this.props['yt-data-json']['title']}>{this.props['yt-data-json']['title']}</h6>
-                <p className="artist" title={this.props['yt-data-json'].artist_info.un}>{this.props['yt-data-json'].artist_info.un}</p>
+                <p className="artist" title={this.props['yt-data-json'].artist}>{this.props['yt-data-json'].artist}</p>
             </li>
         )
     }
