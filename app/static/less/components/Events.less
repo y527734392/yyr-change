@@ -1,0 +1,50 @@
+/**
+ * Created by lgl on 17/10/13.
+ */
+@import '../common';
+@import '../base';
+
+.events-inner {
+	width: 1220px;
+	margin: 0 auto;
+	ul {
+		margin-left: -52px;
+		li {
+			float: left;
+			margin-left: 52px;
+			width: 202px;
+			a {
+				display: block;
+			}
+			.show_pic {
+				width: 200px;
+				height: 283px;
+				border: 1px solid @e;
+				//background: url(/static/img/core/loading_data.gif) no-repeat center;
+				img {
+					width: 100%;
+					height: 100%;
+					display: block;
+				}
+			}
+			.show_title {
+				color: @3;
+				font-size: 14px;
+				margin-top: 18px;
+				height: 42px;
+				overflow: hidden;
+			}
+			.show_info {
+				margin-top: 14px;
+				p {
+					color: @9;
+					.price {
+						color: #e60139;
+						margin-right: 5px;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}

@@ -8,7 +8,7 @@ import MusicClassify from './Mod/MusicClassify'
 import Crowds from 'components/Crowds'
 import Songlist from './Mod/Songlist'
 import RankList from './Mod/RankList'
-import Event from './Mod/Event'
+import Events from 'components/Events'
 
 /**
  * voter
@@ -64,7 +64,7 @@ class Home extends React.Component {
                         </div>
                     </div>
                     <div className="home-events">
-                        <Event yt-data-title="推荐演出" yt-data-events={this.state.data.suggest_events} />
+                        <Events yt-data-title="推荐演出" yt-data-num='5' yt-data-events={this.state.data.suggest_events} />
                     </div>
                 </div>
                 : <div>正在加载...</div>

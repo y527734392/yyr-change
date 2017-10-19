@@ -20,7 +20,8 @@ import ArtistAll from '../containers/Indie/Mod/ArtistAll' //基础
 
 /*众筹*/
 import Project from '../containers/Project' //基础
-
+/*演出*/
+import Show from '../containers/Show' //基础
 /*import Login from '../containers/Login'
 import Register from '../containers/Register'
 
@@ -52,6 +53,7 @@ class RouteMap extends React.Component {
                             <IndexRoute component={ArtistAll}/>
                         </Route>
                         <Route path="/project" component={Project} />
+                        <Route path="/show" component={Show} />
                     {/*<Route exact strict path="/admin/banner" component={Banner} />
                         <Route exact strict path="/admin/recommend" component={Recommend} />
                         <Route exact strict path="/admin/product" component={Product} />
