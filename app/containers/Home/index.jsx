@@ -24,7 +24,8 @@ class Home extends React.Component {
         super(props, context);
         this.state = {
             data:false,
-            initDone:false
+            initDone:false,
+            screenDone:false
         }
     }
     render() {
@@ -49,17 +50,24 @@ class Home extends React.Component {
                             <MusicClassify />
                         </div>
                     </div>
-                    <div className="home-crowd clearfix">
-                        <Crowds yt-data-title="推荐众筹" yt-data-num='3' yt-data-crowds={this.state.data.suggest_crowd} />
-                    </div>
-                    <div className="home-rankList clearfix">
-                        <div className="inner">
+                    {
+                        this.state.screenDone
+                        ?<div>
+                            <div className="home-crowd clearfix">
+                                <Crowds yt-data-title="推荐众筹" yt-data-num='3' yt-data-crowds={this.state.data.suggest_crowd} />
+                            </div>
+                            <div className="home-rankList clearfix">
+                                <div className="inner">
 
+                                </div>
+                            </div>
+                            <div className="home-events">
+                                <Event yt-data-title="推荐演出" yt-data-events={this.state.data.suggest_events} />
+                            </div>
                         </div>
-                    </div>
-                    <div className="home-events">
-                        <Event yt-data-title="推荐演出" yt-data-events={this.state.data.suggest_events} />
-                    </div>
+                        :<div>正在加载...</div>
+                    }
+
                 </div>
                 : <div>正在加载...</div>
             }
@@ -68,14 +76,27 @@ class Home extends React.Component {
     }
 
     componentWillMount(){
-        _.api('/app/suggest/preview',{
+        _.api('/plaza/home',{
             method:'post',
         }).then((rs)=>{
             if(rs.error_code === 22000){
                 this.setState({
                     data: rs.data,
                     initDone: true
-                })
+                });
+                _.api('/plaza/home',{
+                    method:'post',
+                    data:{
+                        screen:1
+                    }
+                }).then((rs)=>{
+                    if(rs.error_code === 22000){
+                        this.setState({
+                            data: $.extend(this.state.data,rs.data),
+                            screenDone:true
+                        });
+                    }
+                });
             }
         });
     }
