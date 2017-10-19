@@ -25,21 +25,24 @@ module.exports = {
     vendor: path.resolve(dirVars.srcRootDir, 'vendor'),
 
     /* img */
-    imgDir: path.resolve(dirVars.publicDir, 'img'),
+    img: path.resolve(dirVars.staticDir, 'img'),
+
+    /* html */
+    html: path.resolve(dirVars.staticDir, 'html'),
 
     /* icon */
-    iconfontDir: path.resolve(dirVars.publicDir, 'iconfont/'),
+    iconfont: path.resolve(dirVars.staticDir, 'iconfont/'),
 
     /* less */
-    lessDir: path.resolve(dirVars.publicDir, 'less'),
+    less: path.resolve(dirVars.staticDir, 'less'),
 
     /* config */
-    configModule: path.resolve(dirVars.configDir, 'common.config'),
+    //configModule: path.resolve(dirVars.configDir, 'common.config'),
 
     /* utils */
-    utils: path.resolve(dirVars.publicDir, 'js/utils'),
+    utils: path.resolve(dirVars.staticDir, 'js/utils'),
   },
 
   // 当require的模块找不到时，尝试添加这些后缀后进行寻找
-  extensions: ['.js','.jsx', '.css', '.less'],
+  extensions: ['.js','.jsx', '.css', '.less' ,'.html'],
 };

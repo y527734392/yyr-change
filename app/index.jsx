@@ -13,7 +13,7 @@ import RouteMap from './router/routerMap'
 
 
 //common-css
-import 'lessDir/main.less';
+import 'less/main.less';
 
 let store = configureStore();
 

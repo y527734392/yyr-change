@@ -8,7 +8,7 @@ import { Link } from 'react-router'
 import util from 'utils/help'
 let _ = new util();
 
-import 'vendorDir/md5.js';
+//import 'vendorDir/md5.js';
 class Login extends React.Component {
     render() {
         return (
@@ -29,7 +29,8 @@ class Login extends React.Component {
         )
     }
     onLogin(){
-        let username = $('.username').val();
+        console.log($('.username'));
+        /*let username = $('.username').val();
         let password = $('.passwd').val();
         let json = {
             username:username,
@@ -44,7 +45,7 @@ class Login extends React.Component {
                 console.log('跳转');
                 this.props.history.push('/');
             }
-        });
+        });*/
     }
 }
 

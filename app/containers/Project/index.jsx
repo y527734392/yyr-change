@@ -21,7 +21,7 @@ let _ = new util();
 /**
  * css
  */
-import 'lessDir/containers/Project';
+import 'less/containers/Project';
 
 //content
 class Project extends React.Component {

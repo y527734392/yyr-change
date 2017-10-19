@@ -1,5 +1,5 @@
 /**
- * Created by Muyi on 17/10/17.
+ * Created by Muyi on 17/10/19.
  */
 
 /**
@@ -7,6 +7,10 @@
  */
 import React from 'react'
 import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import * as Actions from 'actions/index'
 /**
  * voter
  */
@@ -26,14 +30,29 @@ class UserInfo extends React.Component {
     }
 
     render() {
-        console.log(this.props.actions)
         return (
             <div>
-                {this.props.info.un}
+                {this.props.userinfo.un}
+                {/*<div onClick={this.login.bind(this)}>登陆</div>*/}
             </div>
         )
     }
 }
-export default UserInfo
+function mapStateToProps(state) {
+    return {
+        userinfo: state.userInfo
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        Actions: bindActionCreators(Actions, dispatch)
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(UserInfo)
 
  

@@ -17,7 +17,7 @@ let _ = new util();
 /**
  * css
  */
-//import 'lessDir/xxxx';
+//import 'less/xxxx';
 
 //content
 class SongsDay extends React.Component {

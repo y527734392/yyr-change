@@ -16,9 +16,7 @@ import Events from 'components/Events'
 import util from 'utils/help'
 let _ = new util();
 
-//import 'vendor/md5.js';
-
-import 'lessDir/containers/Home';
+import 'less/containers/Home';
 
 
 class Home extends React.Component {

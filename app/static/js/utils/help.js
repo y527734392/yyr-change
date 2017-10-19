@@ -1,6 +1,7 @@
 /**
  * Created by muyi on 2017/9/16.
  */
+import TpassJump from 'html/tpassjump'
 
 class Utils {
     constructor(){
@@ -85,20 +86,18 @@ class Utils {
 		}
 		return fmt;
 	}
-    Login( sta,tpl ) {
+    login( sta,tpl,cb ) {
+        console.log($('body'))
         var TPASS = new Tpass();
         var tar = sta === 2 ? '_blank' : (sta === 0 ? 'pop' : '_self');
         var param = {
             tpl: tpl,
-            u: loc.href,
+            u: location.href,
             target: tar,
-            staticPage: location.protocol + '//' + location.host + '/static/html/tpassjump.html'
+            staticPage: location.protocol+'//'+location.host+'/static/html/tpassjump.html'
         };
         TPASS.login(param, function (d) {
-            _m.utils.new_userinfo();
-            _m.cfg.login_log = 0;
-            window.MiniPipe.refreshBlock();
-
+            cb();
         });
     }
 }

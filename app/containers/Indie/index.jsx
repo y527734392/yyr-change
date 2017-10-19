@@ -17,7 +17,7 @@ let _ = new util();
 /**
  * css
  */
-import 'lessDir/containers/Indie';
+import 'less/containers/Indie';
 
 //content
 class Indie extends React.Component {
