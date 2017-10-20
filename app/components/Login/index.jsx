@@ -1,5 +1,5 @@
 /**
- * Created by Muyi on 17/10/19.
+ * Created by Muyi on 17/10/20.
  */
 
 /**
@@ -9,11 +9,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
 import * as Actions from 'actions/index'
-
-import HaveUserInfo from './Mod/HaveUserInfo'
-import NoUserInfo from './Mod/NoUserInfo'
 /**
  * voter
  */
@@ -26,29 +22,30 @@ let _ = new util();
 //import 'lessDir/xxxx';
 
 //content
-class UserInfo extends React.Component {
+class Login extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {}
     }
 
     render() {
-        console.log(JSON.stringify(this.props.userinfo) != '{}')
         return (
-            <div className="info-con">
-                {
-                    JSON.stringify(this.props.userinfo) != '{}'
-                    ?<div className="haveUser">
-                        <HaveUserInfo />
-                    </div>
-                    :<div className="noUser">
-                        <NoUserInfo />
-                    </div>
-
-                }
-                {/*<div onClick={this.login.bind(this)}>登陆</div>*/}
-            </div>
+            <span className="login need-login" onClick={this.login.bind(this)}>登录</span>
         )
+    }
+    login(){
+        _.login(0,'baidu_musician',()=>{
+            _.api('/app/user/info',{
+                method:'post',
+            }).then((rs)=>{
+                if(rs.error_code === 22000){
+                    this.setState({
+                        initDone: true
+                    });
+                    this.props.Actions.login(rs.data)
+                }
+            });
+        });
     }
 }
 function mapStateToProps(state) {
@@ -66,6 +63,6 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(UserInfo)
+)(Login)
 
  

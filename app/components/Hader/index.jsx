@@ -49,7 +49,7 @@ class Header extends React.Component {
                     <section className="user-info">
                         {
                             this.state.initDone
-                            ? <UserInfo info={this.props.userinfo} />
+                            ? <UserInfo />
                             :'加载中。。。'
                         }
 
@@ -68,6 +68,12 @@ class Header extends React.Component {
                     initDone: true
                 });
                 this.props.Actions.login(rs.data)
+            }else if(rs.error_code === 22452){
+                this.setState({
+                    initDone: true
+                });
+                this.props.Actions.login({})
+
             }
         });
     }
@@ -79,21 +85,7 @@ class Header extends React.Component {
         })
     }*/
 
-    login(){
-        _.login(0,'baidu_musician',()=>{
-            _.api('/app/user/info',{
-                method:'post',
-            }).then((rs)=>{
 
-                if(rs.error_code === 22000){
-                    this.setState({
-                        initDone: true
-                    });
-                    this.props.Actions.login(rs.data)
-                }
-            });
-        });
-    }
 
 
 }

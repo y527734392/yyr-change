@@ -87,7 +87,6 @@ class Utils {
 		return fmt;
 	}
     login( sta,tpl,cb ) {
-        console.log($('body'))
         var TPASS = new Tpass();
         var tar = sta === 2 ? '_blank' : (sta === 0 ? 'pop' : '_self');
         var param = {
@@ -99,6 +98,13 @@ class Utils {
         TPASS.login(param, function (d) {
             cb();
         });
+    }
+    logout(cb){
+        var TPASS=new Tpass();
+        TPASS.logout();
+        setTimeout(function(){
+            cb();
+        },500);
     }
 }
 
