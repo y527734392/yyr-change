@@ -36,7 +36,7 @@ class RankList extends React.Component {
 				<div className="hd">
 					<h3 className="title">{this.props['yt-data-title']}</h3>
 					<div className="cover-hook">
-						<span className="text">榜单更新至：2016-08-03 热歌榜</span>
+						<span className="text">{this.props['yt-data-rank']['desc']['title']}</span>
 					</div>
 				</div>
 				<div className="bd">

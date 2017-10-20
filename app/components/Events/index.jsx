@@ -17,7 +17,7 @@ let _ = new util();
 /**
  * css
  */
-import 'lessDir/components/Events';
+import 'less/components/Events';
 
 //content
 class Events extends React.Component {

@@ -30,7 +30,6 @@ class Items extends React.Component {
 			mask_value: this.props['yt-data-json']['overplus_time']=="已结束"? (<p className="end">已结束</p>): <p className="detail">查看详情</p>,
 			mask: this.props['yt-data-json']['overplus_time']=="已结束"? 'maskend' :'',
 		}
-
 	}
 	render() {
 		return (

@@ -24,11 +24,12 @@ let _ = new util();
 class SongAll extends React.Component {
     render() {
         var items = [];
+        {/*
         this.props['yt-data-songslist']['song_list'].map((list,index)=>{
             if(index<=9){
                 items.push(<Item key={index} yt-data-json={list} yt-data-index={index} />)
             }
-        });
+        });*/}
         return (
             <div className="song-list clearfix">
                 <div className="lf">

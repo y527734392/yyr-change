@@ -36,9 +36,9 @@ class Items extends React.Component {
 				</div>
 				<Link className="song-name">{this.props['yt-data-json']['title']}</Link>
 				<span className="status-bar">
-					<span className="status-inner-bar" style={{width: '53%'}}></span>
+					<span className="status-inner-bar" style={{width:this.props['yt-data-json']['percent']+'%'}}></span>
 				</span>
-				<Link className="name">{this.props['yt-data-json']['artist_info']['un']}</Link>
+				<Link className="name">{this.props['yt-data-json']['artist']}</Link>
 
 			</li>
 		)

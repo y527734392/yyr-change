@@ -42,14 +42,32 @@ class TopHome extends React.Component {
     }
 
     componentWillMount(){
-        _.api('/app/rank/toprank',{
+        _.api('/plaza/top',{
             method:'post',
+	        data:{
+                type:'total'
+            }
         }).then((rs)=>{
             if(rs.error_code === 22000){
                 this.setState({
                     data: rs.data,
                     initDone: true
-                })
+                });
+	            _.api('/plaza/top',{
+		            method:'post',
+		            data:{
+			            type:'indie'
+		            }
+	            }).then((rs)=>{
+		            if(rs.error_code === 22000){
+			            console.log(this.state.data);
+			            console.log(rs.data);
+			            this.setState({
+				            data: $.extend(this.state.data,rs.data),
+				            //screenDone:true
+			            });
+		            }
+	            });
             }
         });
     }

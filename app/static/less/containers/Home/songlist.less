@@ -4,6 +4,7 @@
 .home-songlist {
 	background: #f8f8f8;
 	.home-songlist-inner {
+		padding:40px 0 45px;
 		.songlists-con {
 			.songlist-carousel {
 				width: 1220px;
@@ -28,26 +29,59 @@
 									height: 100%;
 									display: block;
 								}
+								.audition-box {
+									//background: url(/static/img/page/homepage/audition-bg.png) no-repeat;
+									width: 180px;
+									height: 38px;
+									line-height: 38px;
+									merge: 'homepage';
+									position: absolute;
+									left: 0;
+									top: 0;
+									.audition-icon {
+										color: @f;
+									}
+								}
 							}
 							dd {
 								background: @f;
 								height: 165px;
 								padding: 15px 25px 0;
 								overflow: hidden;
+								font-size: 14px;
 								.title-box {
 									position: relative;
 									padding-bottom: 15px;
 									a {
 										color: @3;
-										font-size: 14px;
 									}
 									span {
 										color: @9;
 										margin-left: 7px;
 									}
 								}
-								.show-song {
+								.show-songs {
 									padding-top: 10px;
+									li {
+										position: relative;
+										line-height: 25px;
+										div {
+											.overflowall();
+											display: inline-block;
+										}
+										.song-title {
+											color: @3;
+											width: 200px;
+										}
+										.song-artist {
+											width: 150px;
+											a {
+												color: @9;
+												font-size: 12px;
+											}
+
+										}
+									}
 								}
 							}
 						}
