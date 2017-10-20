@@ -25,15 +25,27 @@ class RankList extends React.Component {
 		super(props, context);
 	}
 	render() {
-		{/*var items = [];
-		this.props['yt-data-crowds'].map((list,index)=>{
-			if (index<=3){
-				items.push(<Item key={index} yt-data-json={list} yt-data-class={this.props['yt-data-class']} />)
+		var items = [];
+		this.props['yt-data-rank']['song_list'].map((list,index)=>{
+			if (index<=9){
+				items.push(<Item key={index} yt-data-json={list} yt-data-index={index} />)
 			}
-		});*/}
+		});
 		return (
-			<div className="home-ranklist-inner">
-				<h3 className="title home-title">{this.props['yt-data-title']}</h3>
+			<div className="ranking-box">
+				<div className="hd">
+					<h3 className="title">{this.props['yt-data-title']}</h3>
+					<div className="cover-hook">
+						<span className="text">{this.props['yt-data-rank']['desc']['title']}</span>
+					</div>
+				</div>
+				<div className="bd">
+					<ul>
+						{items}
+					</ul>
+					<div className="ranking-more"><Link>完整榜单</Link></div>
+				</div>
+
 
 			</div>
 		)

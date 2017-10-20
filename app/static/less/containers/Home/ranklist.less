@@ -3,19 +3,125 @@
  */
 .home-rankList {
 	padding: 40px 0 45px;
-	.home-ranklist-inner {
+	.inner {
 		width: 1220px;
 		margin: 0 auto;
-		.ranklist {
+		.ranking-box {
 			float: left;
 			border: 1px solid #f1f1f1;
 			border-top: none;
-			width: 549px;
+			width: 548px;
 			padding: 85px 30px 0;
-			float: left;
 			height: 734px;
 			position: relative;
 			margin-bottom: 10px;
+			.hd {
+				//background: url(/static/img/page/homepage/title_bg1.jpg) no-repeat;
+				width: 611px;
+				height: 24px;
+				merge: y_bg;
+				line-height: 24px;
+				margin-left: -31px;
+				position: relative;
+				position: absolute;
+				top: 0;
+				text-align: left;
+				.title {
+					text-align: center;
+					font-size: 24px;
+				}
+				.cover-hook {
+					position: static;
+					.text {
+						display: block;
+						font-size: 12px;
+						color: @9;
+						margin-top: 15px;
+						text-align: center;
+					}
+				}
+			}
+			.bd {
+				ul {
+					li {
+						position: relative;
+						padding: 15px 0;
+						.number {
+							font-size: 24px;
+							color: @3;
+							float: left;
+							width: 40px;
+						}
+						.status-center {
+							width: 7px;
+							height: 2px;
+							display: inline-block;
+							background: #333;
+							margin: 18px 18px 0 0;
+							i {
+
+							}
+						}
+						.user-avatar {
+							width: 38px;
+							height: 38px;
+							border: 1px solid @e;
+							float: left;
+							margin-right: 25px;
+							img {
+								width: 100%;
+								height: 100%;
+								display: block;
+							}
+						}
+						.song-name {
+							.overflowall();
+							width: 130px;
+							margin-right: 40px;
+							line-height: 40px;
+							display: block;
+							font-size: 14px;
+							float: left;
+							color: @3;
+						}
+						.status-bar {
+							float: left;
+							width: 60px;
+							height: 4px;
+							display: block;
+							margin-top: 18px;
+							background: @f8;
+							margin-right: 45px;
+							.status-inner-bar {
+								background: #ef9d9d;
+								height: 4px;
+								display: block;
+							}
+						}
+						.name {
+							display: block;
+							float: left;
+							color: @9;
+							line-height: 40px;
+						}
+					}
+				}
+				.ranking-more {
+					position: absolute;
+					bottom: -9px;
+					display: block;
+					text-align: center;
+					left: 0;
+					right: 0;
+					a {
+						background: @f;
+						display: inline-block;
+						padding: 0 20px;
+						color: @6;
+					}
+				}
+
+			}
 		}
 	}
 

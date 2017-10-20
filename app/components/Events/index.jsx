@@ -1,5 +1,5 @@
 /**
- * Created by lgl on 17/10/13.
+ * Created by lgl on 17/10/19.
  */
 
 /**
@@ -17,32 +17,37 @@ let _ = new util();
 /**
  * css
  */
-//import 'less/xxxx';
+import 'less/components/Events';
 
 //content
-class Event extends React.Component {
+class Events extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 	}
 	render() {
 		var items = [];
 		this.props['yt-data-events'].map((list,index)=>{
-			if (index<=4){
+			if (this.props['yt-data-events'] && index<= this.props['yt-data-num']){
+				items.push(<Item key={index} yt-data-json={list} yt-data-class={this.props['yt-data-class']} />)
+			}else{
 				items.push(<Item key={index} yt-data-json={list} yt-data-class={this.props['yt-data-class']} />)
 			}
 		});
 		return (
-			<div className="home-events-inner">
-				<h3 className="title home-title">{this.props['yt-data-title']}</h3>
-				<ul className="clearfix">
+			<div className="events-inner">
+				{
+					this.props['yt-data-title']
+					?<h3 className="title home-title">{this.props['yt-data-title']}</h3>
+					:''
+				}
+				<ul className="events-list clearfix">
 					{items}
 				</ul>
-
 			</div>
 		)
 	}
 
 
 }
-export default Event
+export default Events
 

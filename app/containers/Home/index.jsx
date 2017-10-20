@@ -8,7 +8,7 @@ import MusicClassify from './Mod/MusicClassify'
 import Crowds from 'components/Crowds'
 import Songlist from './Mod/Songlist'
 import RankList from './Mod/RankList'
-import Event from './Mod/Event'
+import Events from 'components/Events'
 
 /**
  * voter
@@ -56,18 +56,21 @@ class Home extends React.Component {
                             <div className="home-crowd clearfix">
                                 <Crowds yt-data-title="推荐众筹" yt-data-num='3' yt-data-crowds={this.state.data.suggest_crowd} />
                             </div>
+                            <div className="home-songlist clearfix">
+                                <Songlist yt-data-title="推荐歌单" yt-data-songlist={this.state.data.song_list} />
+                            </div>
                             <div className="home-rankList clearfix">
                                 <div className="inner">
-
+                                    <RankList yt-data-title="原创音乐榜" yt-data-rank={this.state.data.rank_list[0]} />
+                                    <RankList yt-data-title="T榜原创榜单" yt-data-rank={this.state.data.rank_list[1]} />
                                 </div>
                             </div>
                             <div className="home-events">
-                                <Event yt-data-title="推荐演出" yt-data-events={this.state.data.suggest_events} />
+                                <Events yt-data-title="推荐演出" yt-data-num='5' yt-data-events={this.state.data.suggest_events} />
                             </div>
                         </div>
                         :<div>正在加载...</div>
                     }
-
                 </div>
                 : <div>正在加载...</div>
             }
@@ -91,6 +94,8 @@ class Home extends React.Component {
                     }
                 }).then((rs)=>{
                     if(rs.error_code === 22000){
+	                    console.log(this.state.data);
+	                    console.log(rs.data);
                         this.setState({
                             data: $.extend(this.state.data,rs.data),
                             screenDone:true
