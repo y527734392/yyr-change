@@ -25,6 +25,7 @@ class SongMusicianDay extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
+        	//type:this.props.location.state.type,
             data:false,
             initDone:false
         }
@@ -32,8 +33,7 @@ class SongMusicianDay extends React.Component {
     render() {
         return (
             <div className="songClassDay">
-                <DayOrWeek />
-
+                <DayOrWeek yt-data-listType={this.props.params.type} />
                 {
                     this.state.initDone
                     ? <div>
@@ -54,9 +54,13 @@ class SongMusicianDay extends React.Component {
         )
     }
     componentWillMount(){
-        _.api('/app/rank/toprank',{
-            method:'post',
-        }).then((rs)=>{
+    	console.log(this.props.params.type);
+	    _.api('/plaza/top/song/'+this.props.params.type,{
+		    method:'post',
+		    data:{
+			    t:'day'
+		    }
+	    }).then((rs)=>{
             if(rs.error_code === 22000){
                 this.setState({
                     data: rs.data,

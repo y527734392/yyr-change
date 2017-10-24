@@ -21,14 +21,15 @@ let _ = new util();
 //content
 class DayOrWeek extends React.Component {
     render() {
+        //console.log(this.props.params.type);
         return (
             <div className="dayOrWeek">
                 <ul className="clearfix">
                     <li className="on">
-                        <Link to="/top/song/day">日榜</Link>
+                        <Link to={"/top/song/"+ this.props['yt-data-listType']+"/day"}>日榜</Link>
                     </li>
                     <li>
-                        <Link to="/top/song/week">周榜</Link>
+                        <Link to={"/top/song/"+ this.props['yt-data-listType']+"/week"}>周榜</Link>
                     </li>
                 </ul>
             </div>

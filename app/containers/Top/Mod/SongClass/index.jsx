@@ -22,8 +22,8 @@ let _ = new util();
 //content
 class SongMusician extends React.Component {
 
-    render() {
 
+    render() {
         return (
             <div className="songClass">
                 <TopSubNav yt-data-type="song_musician" />

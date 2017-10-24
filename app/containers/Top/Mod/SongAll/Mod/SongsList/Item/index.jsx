@@ -34,9 +34,9 @@ class Item extends React.Component {
                 <span className="status"><i></i></span>
                 <div className="song—info clearfix">
                     <h3 className="title">{this.props['yt-data-json'].title}</h3>
-                    <p className="artist">{this.props['yt-data-json'].artist_info.un}</p>
+                    <p className="artist">{this.props['yt-data-json'].all_artist}</p>
                 </div>
-                <p className="play-num">xx万次播放</p>
+                <p className="play-num">{this.props['yt-data-json'].hot_listen}次播放</p>
             </li>
         )
     }

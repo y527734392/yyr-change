@@ -23,12 +23,17 @@ let _ = new util();
 class SongsDay extends React.Component {
     render() {
         var items = [];
-        console.log(this.props['yt-data-json']);
-        this.props['yt-data-json']['song_list'].map((list,index)=>{
-                items.push(<Item key={index} yt-data-json={list} yt-data-index={index} />)
+        this.props['yt-data-json']['hot_songs'].map((list,index)=>{
+            if(index<20){
+	            items.push(<Item key={index} yt-data-json={list} yt-data-index={index} />)
+            }else{
+                return false;
+            }
         });
         return (
-            <div>123</div>
+            <ul className="SongsDay-box">
+                {items}
+            </ul>
         )
     }
 }

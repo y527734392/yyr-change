@@ -45,26 +45,47 @@ class TopHome extends React.Component {
         _.api('/plaza/top',{
             method:'post',
 	        data:{
-                type:'total'
+                type:'total'//百度原创音乐榜
             }
         }).then((rs)=>{
             if(rs.error_code === 22000){
                 this.setState({
-                    data: rs.data,
-                    initDone: true
+                    data: {total_top:rs.data},
                 });
 	            _.api('/plaza/top',{
 		            method:'post',
 		            data:{
-			            type:'indie'
+			            type:'indie'//独立音乐榜
 		            }
 	            }).then((rs)=>{
 		            if(rs.error_code === 22000){
-			            console.log(this.state.data);
-			            console.log(rs.data);
 			            this.setState({
-				            data: $.extend(this.state.data,rs.data),
-				            //screenDone:true
+				            data: $.extend(this.state.data,{indie_top:rs.data}),
+			            });
+			            _.api('/plaza/top',{
+				            method:'post',
+				            data:{
+					            type:'gufeng'//古风榜
+				            }
+			            }).then((rs)=>{
+				            if(rs.error_code === 22000){
+					            this.setState({
+						            data: $.extend(this.state.data,{gufeng_top:rs.data}),
+					            });
+					            _.api('/plaza/top',{//一周精选
+						            method:'post',
+						            data:{
+							            type:'mc'
+						            }
+					            }).then((rs)=>{
+						            if(rs.error_code === 22000){
+							            this.setState({
+								            data: $.extend(this.state.data,{mc_top:rs.data.mcTop}),
+								            initDone: true
+							            });
+						            }
+					            });
+				            }
 			            });
 		            }
 	            });

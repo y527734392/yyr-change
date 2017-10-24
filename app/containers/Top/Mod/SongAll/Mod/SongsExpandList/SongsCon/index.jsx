@@ -26,7 +26,7 @@ class SongsExpandCon extends React.Component {
 				<div className="songs-title-info clearfix">
 					<h2 className="title">{this.props['yt-data-title']}</h2>
 					<i className="split">|</i>
-					<a href="/top/song" className="more-info">更多</a>
+					<Link to={{pathname:this.props['yt-data-url'],state:{type:this.props['yt-data-type']}}} className="more-info">更多</Link>
 					<div className="cover-hook play-all">
 						<a href="" className="cover-hook-play icon-play-large"><i></i></a>
 					</div>

@@ -94,8 +94,6 @@ class Home extends React.Component {
                     }
                 }).then((rs)=>{
                     if(rs.error_code === 22000){
-	                    console.log(this.state.data);
-	                    console.log(rs.data);
                         this.setState({
                             data: $.extend(this.state.data,rs.data),
                             screenDone:true

@@ -58,12 +58,74 @@
                 margin-left: 40px;
                 height: 38px;
                 line-height: 38px;
-                color: #999;
+                color: @9;
             }
             .share {
                 float: right;
                 height: 38px;
                 line-height: 38px;
+            }
+        }
+        .songs-box-li {
+            height: 46px;
+            line-height: 46px;
+            position: relative;
+            vertical-align: top;
+            padding: 0 10px 0 22px;
+            border-bottom: 1px solid @f0;
+            border-top: 1px solid @f0;
+            margin-top: -1px;
+            &.wide {
+                height: 84px;
+                line-height: 84px;
+            }
+            .num {
+                width: 35px;
+                float: left;
+                display: inline;
+                font-size: 24px;
+            }
+            .status {
+                width: 20px;
+                height: 20px;
+                float: left;
+                display: inline;
+                position: relative;
+                top: 50%;
+                margin: -5px 5px 0 5px;
+                overflow: hidden;
+                background-color: @3;
+            }
+            .song-info {
+                float: left;
+                display: inline;
+                .pic {
+                    float:left;
+                    display: inline;
+                    width: 55px;
+                    height: 55px;
+                }
+                .title {
+                    float: left;
+                    display: inline;
+                    width: 340px;
+                    font-size: 14px;
+                    margin-right: 20px;
+                }
+                .artist {
+                    float:left;
+                    width: 250px;
+                    display: inline;
+                    vertical-align: middle;
+                    padding-right: 20px;
+                    a {
+                        color: @9;
+                    }
+                }
+            }
+            .hot-info {
+                color: @9;
+                cursor: default;
             }
         }
     }
