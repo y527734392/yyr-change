@@ -10,12 +10,6 @@ import Songlist from './Mod/Songlist'
 import RankList from './Mod/RankList'
 import Events from 'components/Events'
 
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
-
 import 'less/containers/Home';
 
 
@@ -37,8 +31,8 @@ class Home extends React.Component {
                     <Banner yt-data-pic={this.state.data.focus}/>
                     <div className="home-news clearfix">
                         <div className="lf">
-                            <Songs yt-data-title="最新单曲" yt-data-songs={this.state.data.suggest_songs} yt-data-class="songlist" />
-                            <Songs yt-data-title="最新专辑" yt-data-songs={this.state.data.suggest_albums} yt-data-class="albumlist" />
+                            <Songs yt-data-title="最新单曲" yt-data-songs={this.state.data.suggest_songs} yt-data-class="songslist" />
+                            <Songs yt-data-title="最新专辑" yt-data-songs={this.state.data.suggest_albums} yt-data-class="albumslist" />
                         </div>
                         <div className="userInfo">
                             <UserInfo />

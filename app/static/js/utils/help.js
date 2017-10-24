@@ -1,14 +1,10 @@
 /**
  * Created by muyi on 2017/9/16.
  */
-import TpassJump from 'html/tpassjump'
-
 class Utils {
     constructor(){
-
     }
     api(url,options){
-        console.log();
         if(!url){
             alert('请设置url参数');
             return false;
@@ -87,18 +83,24 @@ class Utils {
 		return fmt;
 	}
     login( sta,tpl,cb ) {
-        console.log($('body'))
         var TPASS = new Tpass();
         var tar = sta === 2 ? '_blank' : (sta === 0 ? 'pop' : '_self');
         var param = {
             tpl: tpl,
             u: location.href,
             target: tar,
-            staticPage: location.protocol+'//'+location.host+'/static/html/tpassjump.html'
+            staticPage: location.protocol+'//'+location.host+'/static/vendor/html/tpassjump.html'
         };
         TPASS.login(param, function (d) {
             cb();
         });
+    }
+    logout(cb){
+        var TPASS=new Tpass();
+        TPASS.logout();
+        setTimeout(function(){
+            cb();
+        },500);
     }
 }
 

@@ -11,12 +11,6 @@ import ReactSwipe from 'react-swipe';
 import Item from './Item'
 
 /**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
-
-/**
  * css
  */
 //import 'less/xxxx';

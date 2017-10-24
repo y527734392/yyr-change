@@ -7,9 +7,6 @@ import { Link } from 'react-router'
 
 import Item from './Item'
 
-import util from 'utils/help'
-let _ = new util();
-
 class Header extends React.Component {
     constructor(props, context) {
         super(props, context);

@@ -8,15 +8,10 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 
-import * as Actions from 'actions/index'
+import * as Actions from 'reduxActions/index'
 
 import Nav from './Nav'
 import UserInfo from './UserInfo'
-//let Tpass = require('http://static0.qianqian.com/pc-tpass/prd/scripts/jsdk/tpass-2.0.0.js');
-//'//static0.qianqian.com/pc-tpass/prd/scripts/jsdk/tpass-2.0.0.js'
-
-import util from 'utils/help'
-let _ = new util();
 
 import 'less/head';
 
@@ -31,7 +26,7 @@ class Header extends React.Component {
         return (
             <div id="header" className="sns-header">
                 <hgroup className="cf clearfix">
-                    <a className="logo" href="/">百度音乐人</a>
+                    <Link className="logo" to="/">百度音乐人</Link>
                     <Nav data="banner" />
                     <section className="center-box">
                         <div className="search clearfix">
@@ -49,7 +44,7 @@ class Header extends React.Component {
                     <section className="user-info">
                         {
                             this.state.initDone
-                            ? <UserInfo info={this.props.userinfo} />
+                            ? <UserInfo />
                             :'加载中。。。'
                         }
 
@@ -62,39 +57,20 @@ class Header extends React.Component {
         _.api('/app/user/info',{
             method:'post',
         }).then((rs)=>{
-
             if(rs.error_code === 22000){
                 this.setState({
                     initDone: true
                 });
                 this.props.Actions.login(rs.data)
+            }else if(rs.error_code === 22452){
+                this.setState({
+                    initDone: true
+                });
+                this.props.Actions.login({})
+
             }
         });
     }
-    /*componentDidMount() {
-        console.log(123);
-        // 模拟登陆
-        this.props.Actions.login({
-            un: 'abc'
-        })
-    }*/
-
-    login(){
-        _.login(0,'baidu_musician',()=>{
-            _.api('/app/user/info',{
-                method:'post',
-            }).then((rs)=>{
-
-                if(rs.error_code === 22000){
-                    this.setState({
-                        initDone: true
-                    });
-                    this.props.Actions.login(rs.data)
-                }
-            });
-        });
-    }
-
 
 }
 

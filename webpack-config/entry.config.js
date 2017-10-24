@@ -13,10 +13,9 @@ var devClient = path.resolve(dirVars.webapckConfigDir , 'dev-client');
 var extras = [devClient];
 configEntry['index'] = extras.concat(path.resolve(dirVars.srcRootDir, 'index'));
 
-var vendors =[];
+/*var vendors =[];
 EntryPage.vendors.forEach((vendor) => {
     vendors = vendors.concat(path.resolve(dirVars.vendorDir, vendor));
     configEntry['vendor'] = vendors;
-});
-console.log(configEntry);
+});*/
 module.exports = configEntry;

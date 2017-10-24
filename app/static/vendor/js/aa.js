@@ -4,5 +4,4 @@
 
 
 var init = function($){
-    console.log($('body'))
 };

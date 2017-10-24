@@ -4,9 +4,6 @@
 
 import React from 'react'
 
-import util from 'utils/help'
-let _ = new util();
-
 class NotFound extends React.Component {
     render() {
         return (

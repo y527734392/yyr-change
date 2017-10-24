@@ -10,12 +10,6 @@ import { Link } from 'react-router'
 import Item from './Item'
 
 /**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
-
-/**
  * css
  */
 import 'less/components/IndieSubNav';
@@ -53,7 +47,6 @@ class IndieSubNav extends React.Component {
             var items_type = [],
                 items_class= [];
             this.state.data['musican_style'].map((list,index)=>{
-                //console.log(list);
                 items_type.push(<Item key={index} yt-data-json={list} />)
             });
             for(var list in this.state.nav){

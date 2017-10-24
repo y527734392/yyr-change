@@ -8,11 +8,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import TopSubNav from 'components/TopSubNav'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
 
 /**
  * css

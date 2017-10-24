@@ -7,13 +7,10 @@ import EasyForm, { Field, FieldGroup } from 'react-easyform';
 
 import Subnav from '../../../Subnav'
 import Mod from './Mod'
-import util from 'utils/help'
-let _ = new util();
 
 class Set extends React.Component {
     constructor(props, context) {
         super(props, context);
-        console.log(this.props.params)
         this.state = {
             Reghttp:/^(((https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/,
             timeout:false,

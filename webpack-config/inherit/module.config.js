@@ -27,9 +27,6 @@ module.exports={
             test: /\.html$/,
             include: dirVars.staticDir,
             loader: 'html-loader',
-            options: {
-                name: 'static/html/[name].[hash].[ext]',
-            },
         },
         {
             // 图片加载器，雷同file-loader，更适合图片，可以将较小的图片转成base64，减少http请求

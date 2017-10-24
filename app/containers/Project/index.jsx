@@ -9,14 +9,10 @@ import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as Actions from 'actions/index'
+import * as Actions from 'reduxActions/index'
 
 import Crowds from 'components/Crowds'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
+
 
 /**
  * css
@@ -66,7 +62,6 @@ class Project extends React.Component {
 
     // 处理登录之后的事情
     loginHandle(username) {
-        console.log(this.props.Actions);
         // 保存用户名
         /*const actions = this.props.userInfoActions
         let userinfo = this.props.userinfo

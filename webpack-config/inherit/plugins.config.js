@@ -33,9 +33,9 @@ var configPlugins = [
 
     new CopyWebpackPlugin([
         {
-            /* 抽取出静态html部分 */
-            from: path.resolve(dirVars.htmlDir),
-            to: path.resolve(dirVars.buildDir,'static/html'),
+            /* 抽取第三方部分 */
+            from: path.resolve(dirVars.vendorDir),
+            to: path.resolve(dirVars.buildDir,'static/vendor'),
         },
     ]),
 

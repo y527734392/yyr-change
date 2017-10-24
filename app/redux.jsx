@@ -6,11 +6,6 @@
  * react component
  */
 import { createStore } from 'redux'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
 
 /**
  * css
@@ -37,7 +32,7 @@ export default function(){
 
     //定义数据
     store.subscribe(()=>{
-       console.log('store: ', store.getState());
+       //console.log('store: ', store.getState());
     });
 
     // 触发变化

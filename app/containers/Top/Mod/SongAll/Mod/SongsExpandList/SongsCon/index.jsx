@@ -7,11 +7,7 @@
  */
 import React from 'react'
 import { Link } from 'react-router'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
+
 
 /**
  * css

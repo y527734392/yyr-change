@@ -9,11 +9,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import TopSubNav from 'components/TopSubNav'
 import SongsList from './Mod/SongsList'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
 
 /**
  * css
