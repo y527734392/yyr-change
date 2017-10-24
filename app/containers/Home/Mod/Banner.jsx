@@ -8,11 +8,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import ReactSwipe from 'react-swipe';
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
 
 /**
  * css

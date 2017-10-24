@@ -9,12 +9,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as Actions from 'actions/index'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
+import * as Actions from 'reduxActions/index'
 
 /**
  * css
@@ -81,7 +76,6 @@ class HaveUserInfo extends React.Component {
             $('.menu-list').hide();
         });
         $('.logout').on('click',()=>{
-            console.log(12344444);
             _.logout(()=>{
                 this.props.Actions.login({})
             })

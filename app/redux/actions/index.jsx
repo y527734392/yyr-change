@@ -2,7 +2,7 @@
  * Created by Muyi on 17/10/17.
  */
 
-import * as actionTypes from '../config/redux'
+import * as actionTypes from '../config'
 
 export function login(data) {
     return {

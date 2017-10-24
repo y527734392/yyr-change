@@ -5,9 +5,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import util from 'utils/help'
-let _ = new util();
-
 class Register extends React.Component {
     render() {
         return (
@@ -42,7 +39,6 @@ class Register extends React.Component {
             method:'post',
             data:json,
         }).then((rs)=>{
-            console.log(!!rs);
             if(!!rs && rs.error_code === 22000){
                 alert('注册成功');
                 this.props.history.push('/login');

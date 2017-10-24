@@ -9,11 +9,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import TopSubNav from 'components/TopSubNav'
 import SongsList from './Mod/SongsList'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
 
 /**
  * css
@@ -60,8 +55,6 @@ class TopHome extends React.Component {
 		            }
 	            }).then((rs)=>{
 		            if(rs.error_code === 22000){
-			            console.log(this.state.data);
-			            console.log(rs.data);
 			            this.setState({
 				            data: $.extend(this.state.data,rs.data),
 				            //screenDone:true

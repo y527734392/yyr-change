@@ -9,11 +9,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import IndieSubNav from 'components/IndieSubNav'
 import ArtistInfoCon from './Mod/ArtistInfoCon'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
 
 /**
  * css
@@ -55,7 +50,6 @@ class ArtistAll extends React.Component {
             method:'post',
         }).then((rs)=>{
             if(rs.error_code === 22000){
-                console.log('11111111111111');
                 this.setState({
                     data: rs.data,
                     initDone: true

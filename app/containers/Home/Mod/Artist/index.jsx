@@ -9,11 +9,6 @@ import React from 'react'
 import { Link } from 'react-router'
 
 import Item from './Item'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
 
 /**
  * css

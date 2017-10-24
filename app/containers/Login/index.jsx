@@ -5,9 +5,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import util from 'utils/help'
-let _ = new util();
-
 //import 'vendorDir/md5.js';
 class Login extends React.Component {
     render() {
@@ -29,7 +26,6 @@ class Login extends React.Component {
         )
     }
     onLogin(){
-        console.log($('.username'));
         /*let username = $('.username').val();
         let password = $('.passwd').val();
         let json = {
@@ -42,7 +38,6 @@ class Login extends React.Component {
             data:json,
         }).then((rs)=>{
             if(rs.error_code === 22000){
-                console.log('跳转');
                 this.props.history.push('/');
             }
         });*/

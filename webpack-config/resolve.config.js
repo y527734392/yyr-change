@@ -9,26 +9,12 @@ module.exports = {
     /* components */
     components: path.resolve(dirVars.srcRootDir, 'components'),
 
-    /* actions */
-    actions: path.resolve(dirVars.srcRootDir, 'actions'),
-
-    /* config */
-    config: path.resolve(dirVars.srcRootDir, 'config'),
-
-    /* reducers */
-    reducers: path.resolve(dirVars.srcRootDir, 'reducers'),
-
-    /* store */
-    store: path.resolve(dirVars.srcRootDir, 'store'),
 
     /* vendor */
-    vendor: path.resolve(dirVars.srcRootDir, 'vendor'),
+    vendor: path.resolve(dirVars.staticDir, 'vendor'),
 
     /* img */
     img: path.resolve(dirVars.staticDir, 'img'),
-
-    /* html */
-    html: path.resolve(dirVars.staticDir, 'html'),
 
     /* icon */
     iconfont: path.resolve(dirVars.staticDir, 'iconfont/'),
@@ -41,6 +27,13 @@ module.exports = {
 
     /* utils */
     utils: path.resolve(dirVars.staticDir, 'js/utils'),
+
+
+    /*redux start -------------- */
+    reduxActions: path.resolve(dirVars.srcRootDir, 'redux/actions'), /* action */
+    reduxReducers: path.resolve(dirVars.srcRootDir, 'redux/reducers'), /* reducers */
+    reduxStore: path.resolve(dirVars.srcRootDir, 'redux/store'), /* store */
+    /*redux end-------------- */
   },
 
   // 当require的模块找不到时，尝试添加这些后缀后进行寻找

@@ -3,7 +3,7 @@
  */
 
 import { createStore } from 'redux'
-import rootReducer from 'reducers'
+import rootReducer from 'reduxReducers'
 
 export default function configureStore(initialState) {
     const store = createStore(rootReducer,

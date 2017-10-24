@@ -10,15 +10,10 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import * as Actions from 'actions/index'
+import * as Actions from 'reduxActions/index'
 
 import HaveUserInfo from './Mod/HaveUserInfo'
-import NoUserInfo from './Mod/NoUserInfo'
-/**
- * voter
- */
-import util from 'utils/help'
-let _ = new util();
+
 
 /**
  * css
@@ -29,26 +24,57 @@ let _ = new util();
 class UserInfo extends React.Component {
     constructor(props, context) {
         super(props, context);
-        this.state = {}
+        this.state = {
+            initDone:false
+        }
     }
 
     render() {
-        console.log(JSON.stringify(this.props.userinfo) != '{}')
         return (
-            <div className="info-con">
+            <div>
                 {
-                    JSON.stringify(this.props.userinfo) != '{}'
-                    ?<div className="haveUser">
-                        <HaveUserInfo />
-                    </div>
-                    :<div className="noUser">
-                        <NoUserInfo />
-                    </div>
-
+                    this.state.initDone
+                    ?<div className="info-con">
+                    {
+                        JSON.stringify(this.props.userinfo) != '{}'
+                            ?<div className="haveUser">
+                                <HaveUserInfo />
+                            </div>
+                            :<div className="noUser">
+                                <div className="noUser-con">
+                                    <span className="login need-login" onClick={this.login.bind(this)}>登录</span>
+                                    <span className="spacing">|</span>
+                                    <span className="signup">注册</span>
+                                </div>
+                            </div>
+                    }
+                </div>
+                    :'加载中...'
                 }
-                {/*<div onClick={this.login.bind(this)}>登陆</div>*/}
             </div>
         )
+    }
+    login(){
+        _.login(0,'baidu_musician',()=>{
+            this.setState({
+                initDone: false
+            });
+            _.api('/app/user/info',{
+                method:'post',
+            }).then((rs)=>{
+                if(rs.error_code === 22000){
+                    this.setState({
+                        initDone: true
+                    });
+                    this.props.Actions.login(rs.data)
+                }
+            });
+        });
+    }
+    componentDidMount(){
+        this.setState({
+            initDone: true
+        });
     }
 }
 function mapStateToProps(state) {

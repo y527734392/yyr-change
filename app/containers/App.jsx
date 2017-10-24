@@ -4,6 +4,8 @@ import Pace from 'react-pace-progress'
 import Header from '../components/Hader'
 import Footer from '../components/Footer'
 
+import util from 'utils/help'
+window._ = new util();
 
 
 class App extends React.Component {

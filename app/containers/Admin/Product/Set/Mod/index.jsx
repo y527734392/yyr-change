@@ -5,9 +5,6 @@
 import React from 'react'
 import EasyForm, { Field, FieldGroup } from 'react-easyform';
 
-import util from 'utils/help'
-let _ = new util();
-
 class Mod extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -92,7 +89,6 @@ class Mod extends React.Component {
         //if($(e.target).hasClass('off')){
         //    return false
         //}
-        console.log(this.props.params);
     }
 }
 export default  EasyForm(Mod)
