@@ -9,15 +9,16 @@ var proxy = require('http-proxy-middleware');
 var history = require('connect-history-api-fallback');
 
 var webpack = require('webpack');
-var config = require('./webpack.dev.config');
 var opn = require('opn');
 var port = 8700;
 //创建一个express实力
 var app = express();
 if (process.env.NODE_ENV == 'production') {
     var config = require('./webpack.pro.config');
-    var port = 80;
+    var port = 8900;
     app.use(express.static(path.join(__dirname, 'build')));
+}else{
+    var config = require('./webpack.dev.config'); 
 }
 app.use(history());
 //调用webpack并把配置传递过去

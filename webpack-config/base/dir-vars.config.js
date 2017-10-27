@@ -25,5 +25,6 @@ moduleExports.layoutDir = path.resolve(moduleExports.staticDir, './layout'); // 
 moduleExports.webapckConfigDir = path.resolve(moduleExports.staticRootDir, './webpack-config'); // webpackconfig 配置
 // 生成文件目录
 moduleExports.buildDir = path.resolve(moduleExports.staticRootDir, './build'); // 存放编译后生成的所有代码、资源（图片、字体等，虽然只是简单的从源目录迁移过来）
+moduleExports.buildjsDir = path.resolve(moduleExports.staticRootDir, './build/static/js');
 
 module.exports = moduleExports;

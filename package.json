@@ -7,6 +7,7 @@
     "webpack": "webpack-dev-server --history-api-fallback --config ./webpack.dev.config.js",
     "start": "cross-env NODE_ENV=development node ./server.js",
     "dev": "./node_modules/.bin/webpack --progress --colors --config ./webpack.dev.config.js",
+    "ie": "./node_modules/.bin/webpack --progress --colors --config ./webpack.ie8.config.js",
     "pro": "cross-env NODE_ENV=production node ./server.js",
     "build": "./node_modules/.bin/webpack --progress --colors --config ./webpack.config.js",
     "analyzer": "webpack --json > stats.json && ./node_modules/.bin/webpack-bundle-analyzer --port 8989 stats.json"
