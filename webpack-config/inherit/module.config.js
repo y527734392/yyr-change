@@ -20,7 +20,7 @@ module.exports={
         },
         {
             test:/\.js$/,
-            include:dirVars.vendorDir,
+            include:dirVars.testDir,
             loader: 'exports-loader?window.Zepto!script-loader'
         },
         {
@@ -41,6 +41,16 @@ module.exports={
             },
         },
         {
+            test: /\.(ico)$/,
+            include: dirVars.srcRootDir,
+            // loader: 'url-loader?limit=8192&name=./static/img/[hash].[ext]',
+            loader: 'url-loader',
+            options: {
+                limit:1,
+                name: './static/img/[hash].[ext]',
+            },
+        },
+        {
             // 专供iconfont方案使用的，后面会带一串时间戳，需要特别匹配到
             test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
             include: dirVars.srcRootDir,
@@ -49,5 +59,5 @@ module.exports={
                 name: 'static/fonts/[name].[hash].[ext]',
             },
         },
-    ]
+    ],
 }

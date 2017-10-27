@@ -9,13 +9,14 @@ pluginsConfig.push(new webpack.BannerPlugin("Copyright by yangtongtong@taihe.com
 
 /* 压缩插件 */
 pluginsConfig.push(new webpack.optimize.UglifyJsPlugin({
-  compress: {
+  /*compress: {
     warnings: false,
-  },
+  },*/
 }));
 
 pluginsConfig.push(new webpack.DefinePlugin({
   IS_PRODUCTION: false,
+  'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 }));
 
 pluginsConfig.push(new webpack.LoaderOptionsPlugin({

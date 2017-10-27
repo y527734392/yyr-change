@@ -11,6 +11,14 @@ import configureStore from 'reduxStore/configStore'
 
 import RouteMap from './router/routerMap'
 
+/*兼容ie start*/
+require('es5-shim');
+require('es5-shim/es5-sham');
+require('console-polyfill');
+require('fetch-ie8');
+require('babel-polyfill');
+/*兼容ie end*/
+
 
 //common-css
 import 'less/main.less';

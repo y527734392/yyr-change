@@ -7,7 +7,7 @@
  */
 import React from 'react'
 import { Link } from 'react-router'
-
+import Item_playList from './Item_playList'
 /**
  * css
  */
@@ -21,8 +21,12 @@ class Item extends React.Component {
     }
 
     render() {
+        var items = [];
+        !!this.props['yt-data-json']['play_list'] && this.props['yt-data-json']['play_list'].map((list,index)=>{
+            items.push(<Item_playList key={index} yt-data-json={list} yt-data-index={index} />)
+        });
         return (
-            <li className={this.props['yt-data-index']%5 ==0 ?'no_ml':''}>
+            <li>
                 <div className="artist-content">
                     <div className="pic"><img src={this.props['yt-data-json'].avatar} alt=""/></div>
                     <div className="desc">
@@ -34,12 +38,9 @@ class Item extends React.Component {
                     </div>
 
                 </div>
-                {/*<ul className="artist-songs">
-                    <li>
-                        <span>title</span>
-                        <span className="btn"></span>
-                    </li>
-                </ul>*/}
+                <div className="artist-songs">
+                    {items}
+                </div>
             </li>
         )
     }

@@ -9,11 +9,6 @@
         height: 469px;
         padding: 0 29px;
         border: 1px solid @e;
-        .userBar_loading {
-            width: 100%;
-            padding-top: 30%;
-            background: url('/static/img/core/loading_data.gif') no-repeat center;
-        }
         .user-info-new{
             position: relative;
             padding-top: 57px;
@@ -135,38 +130,7 @@
                 }
             }
         }
-        .musician-number{
-            .musician-number-text{
-                font-size: 14px;
-                color: @9;
-                margin-bottom: 14px;
-                line-height: 27px;
-                span{
-                    color: @f50;
-                }
-            }
-            #sidebarBtnArea {
-                width: 215px;
-                height: 44px;
 
-                .apply-btn{
-                    display: block;
-                    background: @f50;
-                    height: 44px;
-                    line-height: 44px;
-                    font-size: 14px;
-                    color: @f;
-                    text-align: center;
-                    &:hover{
-                        text-decoration: none;
-                    }
-                }
-                .apply-wait{
-                    background: #545454;
-                }
-
-            }
-        }
     }
 
     .login-info.logined-userinfo {
@@ -179,6 +143,178 @@
         }
         .recom-musician{
             padding-top: 10px;
+        }
+    }
+}
+
+.sliderUser {
+    margin-top: 95px;
+    padding: 0 29px 15px;
+    border: 1px solid @e;
+    .sliderUser-con {
+        min-height: 182px;
+        .y_loading {
+            //padding-top: 80px;
+        }
+        .sliderUser-info {
+            position: relative;
+            padding-top: 57px;
+            min-height: 118px;
+            .user-avatar {
+                position: absolute;
+                top: -55px;
+                left: 50%;
+                margin-left: -55px;
+                border: 15px solid @f;
+                a {
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: auto;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+
+                    }
+                }
+            }
+            .user-name {
+                text-align: center;
+                font-size: 18px;
+                display: block;
+            }
+            .user-btn {
+                text-align: center;
+                margin-top: 10px;
+                max-height: 26px;
+                a {
+                    border: 1px solid @e;
+                    color: @9;
+                    line-height: 26px;
+                    height: 26px;
+                    display: inline-block;
+                    padding: 0 40px;
+                    border-radius: 25px;
+                }
+            }
+            .user-numInfo {
+                text-align: center;
+                padding-top: 15px;
+                li {
+                    text-align: center;
+                    display: inline-block;
+                    padding: 0 14px;
+                    position: relative;
+                    .num {
+                        color: @3;
+                        margin-bottom: 5px;
+                        font-size: 14px;
+                    }
+                    .txt {
+                        display: block;
+                        color: @9;
+                        font-size: 14px;
+                    }
+                    i {
+                        position: absolute;
+                        width: 1px;
+                        height: 12px;
+                        display: inline-block;
+                        background: @9;
+                        left: 0;
+                        bottom: 4px;
+                    }
+                }
+            }
+            .login-btn{
+                text-align: center;
+                margin-top:23px;
+                a{
+                    border: 1px solid @e;
+                    color: @9;
+                    line-height: 26px;
+                    height: 26px;
+                    display: inline-block;
+                    padding: 0 40px;
+                    border-radius: 25px;
+                    text-decoration: none;
+                }
+
+            }
+        }
+    }
+
+    .newest_artist {
+        margin-top: 5px;
+        padding-top: 10px;
+        border-top:1px dashed @c;
+        h4.title {
+            font-size: 14px;
+            color: #999;
+            padding-bottom: 10px;
+        }
+        .news-artist-list {
+            height: 35px;
+            line-height: 35px;
+            .artist-avatar {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                overflow: hidden;
+                float: left;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .artist-name {
+                float: left;
+                padding-left: 5px;
+                line-height: 25px;
+                .overflowall();
+                a {
+                    font-size: 14px;
+                    color: @3;
+                }
+            }
+        }
+    }
+    .musician-number{
+        .musician-number-text{
+            font-size: 14px;
+            margin-bottom: 14px;
+            line-height: 27px;
+            p {
+                color: @9;
+            }
+            span{
+                color: @f50;
+            }
+        }
+        #sidebarBtnArea {
+            width: 215px;
+            height: 44px;
+
+            .apply-btn{
+                display: block;
+                background: @f50;
+                height: 44px;
+                line-height: 44px;
+                font-size: 14px;
+                color: @f;
+                text-align: center;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+            .apply-wait{
+                background: #545454;
+            }
+
         }
     }
 }

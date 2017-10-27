@@ -8,25 +8,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 moduleConfig.rules.push({
     test: /\.css$/,
     exclude: /node_modules|bootstrap/,
-    loader:'style-loader!css-loader!postcss-loader',
+    loader: 'style-loader!css-loader!postcss-loader',
 });
 
 moduleConfig.rules.push({
     test: /\.less$/,
     include: dirVars.srcRootDir,
-    use: ExtractTextPlugin.extract([
-        {
-            loader: 'css-loader',
-            options: {
-                //minimize: true,
-            },
-        },
-        { loader:'postcss-loader' },
-        {
-            loader: 'less-loader',
-        },
-
-    ]),
+    loader: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader!postcss-loader!less-loader"}),
 });
 
 module.exports = moduleConfig;

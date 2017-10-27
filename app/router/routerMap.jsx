@@ -56,7 +56,7 @@ class RouteMap extends React.Component {
                         <Route path="/indie/musician" component={Indie} >
                             <IndexRoute component={ArtistAll}/>
                         </Route>
-                        <Route path="/project" component={Project} />
+                        <Route exact strict path="/project" component={Project} />
                         <Route path="/show" component={Show} />
                         <Route path="/login" component={Login} />
 

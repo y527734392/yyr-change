@@ -12,7 +12,6 @@ import Events from 'components/Events'
 
 import 'less/containers/Home';
 
-
 class Home extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -24,7 +23,7 @@ class Home extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="loading-pos">
             {
                 this.state.initDone
                ?<div className="home">
@@ -35,7 +34,7 @@ class Home extends React.Component {
                             <Songs yt-data-title="最新专辑" yt-data-songs={this.state.data.suggest_albums} yt-data-class="albumslist" />
                         </div>
                         <div className="userInfo">
-                            <UserInfo />
+                            <UserInfo yt-data-joinArtists={this.state.data.yyr_data}/>
                         </div>
                     </div>
                     <div className="home-artistsAndClass clearfix">
@@ -63,10 +62,10 @@ class Home extends React.Component {
                                 <Events yt-data-title="推荐演出" yt-data-num='5' yt-data-events={this.state.data.suggest_events} />
                             </div>
                         </div>
-                        :<div>正在加载...</div>
+                        :<div className="y_loading"></div>
                     }
                 </div>
-                : <div>正在加载...</div>
+                : <div className="y_loading"></div>
             }
             </div>
         )
