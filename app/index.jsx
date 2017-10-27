@@ -5,11 +5,13 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, hashHistory,browserHistory } from 'react-router';
+import { Router, Route } from 'react-router';
+import { createHistory } from 'history'
 import { Provider } from 'react-redux'
 import configureStore from 'reduxStore/configStore'
 
 import RouteMap from './router/routerMap'
+const history = createHistory()
 
 /*兼容ie start*/
 require('es5-shim');
@@ -25,11 +27,27 @@ import 'less/main.less';
 
 let store = configureStore();
 
+var Home = React.createClass({
+    render: function () {
+        return (
+            <div>
+                <header>
+                    <ul>
+                        <li>Posts</li>
+                        <li>About</li>
+                    </ul>
+                </header>
+            </div>
+        );
+    }
+});
+
 
 // 渲染组件到页面
 render(
-    <Provider store={store}>
-        <RouteMap history={browserHistory} />
-    </Provider>,
+   /* <Provider store={store}>
+        <RouteMap history={history} />
+    </Provider>,*/
+    <Home />,
     document.getElementById('root')
 );
