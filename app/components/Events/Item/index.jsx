@@ -19,8 +19,11 @@ class Items extends React.Component {
 		super(props,context);
 		this.state = {
 			show_time: _.formateTime(this.props['yt-data-json']['show_starttime'],'MM月dd日')+' '+
-			_.formateTime(this.props['yt-data-json']['show_starttime'],'hh:mm')+'-'+
-			_.formateTime(this.props['yt-data-json']['show_endtime'],'hh:mm')
+				_.formateTime(this.props['yt-data-json']['show_starttime'],'hh:mm')+'-'+
+				_.formateTime(this.props['yt-data-json']['show_endtime'],'hh:mm'),
+			show_price : this.props['yt-data-json']['show_price'] === this.props['yt-data-json']['max_price']?
+				'￥'+ this.props['yt-data-json']['show_price']:
+				'￥'+ this.props['yt-data-json']['show_price'] + ' - ￥'+this.props['yt-data-json']['max_price'],
 
 		}
 	}
@@ -35,7 +38,7 @@ class Items extends React.Component {
 					<p>艺人：{this.props['yt-data-json']['show_artist']}</p>
 					<p>时间：{this.state.show_time}</p>
 					<p>场馆：{this.props['yt-data-json']['show_site']}</p>
-					<p>票价：<span className="price">￥{this.props['yt-data-json']['show_price']}</span>元起</p>
+					<p>票价：<span className="price">{this.state.show_price}</span></p>
 
 				</div>
 

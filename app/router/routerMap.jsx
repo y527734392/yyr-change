@@ -59,7 +59,7 @@ class RouteMap extends React.Component {
                             <IndexRoute component={ArtistAll}/>
                         </Route>
                         <Route path="/project" component={Project} />
-                        <Route path="/show" component={Show} />
+                        <Route path="/show(/:start_time)(/:end_time)(/:page)(/:year_time)" component={Show} />
                         <Route path="/login" component={Login} />
 
                     {/*<Route exact strict path="/admin/banner" component={Banner} />
