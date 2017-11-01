@@ -45,7 +45,7 @@ class ArtistInfoCon extends React.Component {
                 </ul>
                 {
                     this.props.has_more
-                    ?<LoadMore isLoadingMore={this.props.isLoadingMore} loadMoreFn={this.props.loadMoreFn} />
+                    ?<LoadMore isLoadingMore={this.props.isLoadingMore} hasMore={this.props.has_more} loadMoreFn={this.props.loadMoreFn} />
                     :''
                 }
 

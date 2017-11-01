@@ -32,7 +32,6 @@ class ArtistAll extends React.Component {
                 genre:'all',
                 gender:'all',
             }
-
         }
     }
     render() {
@@ -58,7 +57,7 @@ class ArtistAll extends React.Component {
             </div>
         )
     }
-    componentWillMount(){
+    componentDidMount(){
         this.loadFirstPageData()
     }
     // 获取首页数据
@@ -79,7 +78,7 @@ class ArtistAll extends React.Component {
         // 记录状态
         this.setState({
             isLoadingMore: true
-        })
+        });
 
         const apiData = this.state.api;
         _.api('/indie/artist/list',{
@@ -87,7 +86,7 @@ class ArtistAll extends React.Component {
             data:apiData
         }).then((rs)=>{
             if(rs.error_code === 22000){
-                this.resultHandle(rs)
+                this.resultHandle(rs);
                 this.setState({
                     //api:{
                     //    offset: this.state.api.offset + this.state.api.num,

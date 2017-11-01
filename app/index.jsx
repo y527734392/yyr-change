@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 import { createHistory } from 'history'
 import { Provider } from 'react-redux'
 import configureStore from 'reduxStore/configStore'
@@ -45,9 +45,8 @@ var Home = React.createClass({
 
 // 渲染组件到页面
 render(
-   /* <Provider store={store}>
-        <RouteMap history={history} />
-    </Provider>,*/
-    <Home />,
+    <Provider store={store}>
+        <RouteMap history={browserHistory} />
+    </Provider>,
     document.getElementById('root')
 );
