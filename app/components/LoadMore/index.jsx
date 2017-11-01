@@ -8,9 +8,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-
-//import 'less/xxxx';
-
 //content
 class LoadMore extends React.Component {
     constructor(props, context) {
@@ -33,28 +30,31 @@ class LoadMore extends React.Component {
         // 执行传输过来的
         this.props.loadMoreFn();
     }
+
     componentDidMount() {
         // 使用滚动时自动加载更多
-        const loadMoreFn = this.props.loadMoreFn
-        const wrapper = this.refs.wrapper
-        let timeoutId
+        const loadMoreFn = this.props.loadMoreFn;
+        const wrapper = this.refs.wrapper;
+        let timeoutId;
         function callback() {
-            const top = wrapper.getBoundingClientRect().top-500
-            const windowHeight = window.screen.height
+            const top = wrapper.getBoundingClientRect().top && wrapper.getBoundingClientRect().top - 500;
+            const windowHeight = window.screen.height;
             if (top && top < windowHeight) {
                 // 证明 wrapper 已经被滚动到暴露在页面可视范围之内了
-                loadMoreFn()
+                loadMoreFn();
             }
         }
-        window.addEventListener('scroll', function () {
+        $(window).on('scroll', ()=> {
+            //加载中时 return false
             if (this.props.isLoadingMore) {
-                return
+                return false;
             }
             if (timeoutId) {
-                clearTimeout(timeoutId)
+                clearTimeout(timeoutId);
             }
-            timeoutId = setTimeout(callback, 50)
-        }.bind(this), false);
+            //滑动 每隔50ms触发一次
+            timeoutId = setTimeout(callback, 50);
+        });
     }
 }
 
