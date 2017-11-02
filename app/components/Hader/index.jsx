@@ -6,8 +6,6 @@ import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
-
 import * as Actions from 'reduxActions/index'
 
 import Nav from './Nav'
@@ -41,22 +39,23 @@ class Header extends React.Component {
                             </div>
                         </div>
                     </section>
-                    <section className="user-info">
+                    <section className="user-info loading-pos">
                         {
                             this.state.initDone
                             ? <UserInfo />
-                            :'加载中。。。'
+                            :<div className="y_loading"></div>
                         }
-
                     </section>
                 </hgroup>
             </div>
         )
     }
     componentWillMount(){
+        this.props.Actions.userload(false);
         _.api('/app/user/info',{
             method:'post',
         }).then((rs)=>{
+            this.props.Actions.userload(true);
             if(rs.error_code === 22000){
                 this.setState({
                     initDone: true
@@ -66,8 +65,7 @@ class Header extends React.Component {
                 this.setState({
                     initDone: true
                 });
-                this.props.Actions.login({})
-
+                this.props.Actions.login({});
             }
         });
     }
@@ -76,7 +74,8 @@ class Header extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        userinfo: state.userInfo
+        userinfo: state.userInfo,
+        userload:state.userLoading
     }
 }
 

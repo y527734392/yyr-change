@@ -1,5 +1,5 @@
-@import './common';
-@import './base';
+@import (reference) './common';
+@import (reference) './base';
 
 @headimg : '../../static/img/containers/header';
 #header {
@@ -159,11 +159,7 @@
 		min-width: 150px;
 		float: right;
 		padding-top: 7px;
-		.login_loading {
-			width:163px;
-			height: 40px;
-			background: url('/static/img/core/loading_data.gif') no-repeat center;
-		}
+		height: 45px;
 
 		.info-con {
 			.noUser-con {

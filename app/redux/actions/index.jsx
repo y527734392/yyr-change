@@ -10,5 +10,11 @@ export function login(data) {
         data
     }
 }
+export function userload(data) {
+    return {
+        type: actionTypes.USERINFO_LOADING,
+        data
+    }
+}
 
  

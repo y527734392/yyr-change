@@ -9,15 +9,18 @@ var proxy = require('http-proxy-middleware');
 var history = require('connect-history-api-fallback');
 
 var webpack = require('webpack');
-var config = require('./webpack.dev.config');
 var opn = require('opn');
-
+var port = 8700;
 //创建一个express实力
 var app = express();
-
+if (process.env.NODE_ENV == 'production') {
+    var config = require('./webpack.pro.config');
+    var port = 8900;
+    app.use(express.static(path.join(__dirname, 'build')));
+}else{
+    var config = require('./webpack.dev.config'); 
+}
 app.use(history());
-
-
 //调用webpack并把配置传递过去
 var compiler = webpack(config);
 
@@ -36,11 +39,6 @@ var hotMiddleware = require('webpack-hot-middleware')(compiler);
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
-
-
-
-
-var port = 8700;
 // webpack插件，监听html文件改变事件
 compiler.plugin('compilation', function (compilation) {
     compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
@@ -60,14 +58,6 @@ var options = {
     target: 'http://192.168.217.16:8180', // target host
     changeOrigin: true,               // needed for virtual hosted sites
     ws: true,                         // proxy websockets
-    /*pathRewrite: {
-        '/indie/' : '/app/indie/',     // rewrite path
-        //'^/api/remove/path' : '/path'           // remove base path
-    },
-
-    router: {
-        'dev.localhost:3000' : 'http://localhost:8000'
-    }*/
 };
 var exampleProxy = proxy(options);
 app.use(contxt, exampleProxy);

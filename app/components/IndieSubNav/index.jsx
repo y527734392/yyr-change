@@ -19,26 +19,9 @@ class IndieSubNav extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            data:false,
+            data:null,
             initDone:false,
-            nav:{
-                'all' : {
-                    'title': '全部',
-                    'url': '/',
-                },
-                'male' : {
-                    'title' : '男音乐人',
-                    'url' : '/',
-                },
-                'female' : {
-                    'title' : '女音乐人',
-                    'url' : '/',
-                },
-                'band':{
-                    'title' : '乐队/组合',
-                    'url' : '/',
-                },
-            }
+            nav:null
         }
     }
 
@@ -46,15 +29,17 @@ class IndieSubNav extends React.Component {
         if(this.state.initDone){
             var items_type = [],
                 items_class= [];
-            this.state.data['musican_style'].map((list,index)=>{
-                items_type.push(<Item key={index} yt-data-json={list} />)
-            });
-            for(var list in this.state.nav){
-                items_class.push(<Item key={list} yt-data-json={this.state.nav[list]} />)
-            };
+
+            for(var genreList in this.state.data){
+                items_type.push(<Item key={genreList} yt-data-title={genreList} yt-data-json={this.state.data[genreList]} />)
+            }
+
+            for(var genderList in this.state.nav){
+                items_class.push(<Item key={genderList} yt-data-title={genderList} yt-data-json={this.state.nav[genderList]} />)
+            }
         }
         return (
-            <div className="indie-subNav">
+            <div className="indie-subNav loading-pos">
                 {
                     this.state.initDone
                     ?<div>
@@ -71,7 +56,7 @@ class IndieSubNav extends React.Component {
                             </ul>
                         </div>
                     </div>
-                    :'加载中。。。'
+                    :<div className="y_loading"></div>
                 }
             </div>
 
@@ -79,12 +64,13 @@ class IndieSubNav extends React.Component {
     }
 
     componentWillMount(){
-        _.api('/app/suggest/artist',{
+        _.api('/indie/artist/criteria',{
             method:'post',
         }).then((rs)=>{
             if(rs.error_code === 22000){
                 this.setState({
-                    data: rs.data,
+                    data: rs.data.genre,
+                    nav:rs.data.gender,
                     initDone: true
                 })
             }

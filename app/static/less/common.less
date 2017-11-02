@@ -19,6 +19,8 @@
 
 @ie8-fix:~"\0";
 
+@commimg : '../../static/img';
+
 .overflowall(){
     display: block;
     white-space:nowrap;
@@ -29,4 +31,30 @@
 .content {
     min-height: 600px;
     width: 100%;
+}
+.loading-pos {
+    position: relative;
+}
+.y_loading {
+    width:40px;
+    height: 40px;
+    background: #fff url('@{commimg}/core/loading_data.gif') no-repeat center;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 2;
+}
+.loadMore {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+    background: @f50;
+    color: @f;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
 }

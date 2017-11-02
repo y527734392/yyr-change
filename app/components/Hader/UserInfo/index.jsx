@@ -31,12 +31,12 @@ class UserInfo extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="loading-pos">
                 {
                     this.state.initDone
                     ?<div className="info-con">
-                    {
-                        JSON.stringify(this.props.userinfo) != '{}'
+                        {
+                            JSON.stringify(this.props.userinfo) != '{}'
                             ?<div className="haveUser">
                                 <HaveUserInfo />
                             </div>
@@ -47,9 +47,9 @@ class UserInfo extends React.Component {
                                     <span className="signup">注册</span>
                                 </div>
                             </div>
-                    }
-                </div>
-                    :'加载中...'
+                        }
+                    </div>
+                    :<div className="y_loading"></div>
                 }
             </div>
         )
@@ -59,6 +59,7 @@ class UserInfo extends React.Component {
             this.setState({
                 initDone: false
             });
+            this.props.Actions.userload(false)
             _.api('/app/user/info',{
                 method:'post',
             }).then((rs)=>{
@@ -66,7 +67,8 @@ class UserInfo extends React.Component {
                     this.setState({
                         initDone: true
                     });
-                    this.props.Actions.login(rs.data)
+                    this.props.Actions.login(rs.data);
+                    this.props.Actions.userload(true)
                 }
             });
         });
@@ -79,7 +81,8 @@ class UserInfo extends React.Component {
 }
 function mapStateToProps(state) {
     return {
-        userinfo: state.userInfo
+        userinfo: state.userInfo,
+        userload:state.userLoading
     }
 }
 

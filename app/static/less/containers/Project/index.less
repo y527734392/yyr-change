@@ -1,8 +1,8 @@
 /**
  * Created by Muyi on 17/10/14.
  */
-@import '../../common';
-@import '../../base';
+@import (reference) '../../common';
+@import (reference) '../../base';
 
 
 .project-content {
@@ -25,11 +25,13 @@
             margin-top: 13px;
             color: @f;
             text-align: center;
-            font-size: 14px;
-            background: @f50;
-            &:hover,&:visited,&:active,&:focus {
-                color: @f;
-                text-decoration: none;
+            .creat-project-btn {
+                font-size: 14px;
+                background: @f50;
+                &:hover,&:visited,&:active,&:focus {
+                    color: @f;
+                    text-decoration: none;
+                }
             }
         }
     }

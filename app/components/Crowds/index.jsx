@@ -8,6 +8,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Item from './Item'
+import LoadMore from 'components/LoadMore'
 /**
  * css
  */
@@ -37,6 +38,11 @@ class Crowds extends React.Component {
 				<ul className="crowds-list clearfix">
 					{items}
 				</ul>
+				{
+					this.props.hasMore
+					?<LoadMore isLoadingMore={this.props.isLoadingMore} hasMore={this.props.hasMore} loadMoreFn={this.props.loadMoreFn} />
+					:''
+				}
 			</div>
 		)
 	}

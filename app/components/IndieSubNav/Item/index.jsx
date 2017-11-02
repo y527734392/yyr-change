@@ -24,10 +24,7 @@ class Item extends React.Component {
     render() {
         return (
             <li className="on">
-                <Link>{
-                    'title' in this.props['yt-data-json']
-                    ?this.props['yt-data-json'].title
-                    :this.props['yt-data-json'].genre_name}</Link>
+                <Link to={"/"+this.props['yt-data-json']}>{ this.props['yt-data-title']|| '未知'}</Link>
             </li>
         )
     }

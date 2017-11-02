@@ -5,9 +5,11 @@
 import { combineReducers } from 'redux'
 
 import userInfo from './userInfo'
+import userLoading from './userLoading'
 
 const rootReducer = combineReducers({
-    userInfo
+    userInfo,
+    userLoading
 })
 
 export default rootReducer

@@ -3,11 +3,21 @@
  */
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, hashHistory,browserHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
+import { createHistory } from 'history'
 import { Provider } from 'react-redux'
 import configureStore from 'reduxStore/configStore'
 
 import RouteMap from './router/routerMap'
+const history = createHistory()
+
+/*兼容ie start*/
+require('es5-shim');
+require('es5-shim/es5-sham');
+require('console-polyfill');
+require('fetch-ie8');
+require('babel-polyfill');
+/*兼容ie end*/
 
 //const history = createHistory()
 
@@ -17,6 +27,21 @@ import RouteMap from './router/routerMap'
 import 'less/main.less';
 
 let store = configureStore();
+
+var Home = React.createClass({
+    render: function () {
+        return (
+            <div>
+                <header>
+                    <ul>
+                        <li>Posts</li>
+                        <li>About</li>
+                    </ul>
+                </header>
+            </div>
+        );
+    }
+});
 
 
 // 渲染组件到页面
