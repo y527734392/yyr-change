@@ -17,7 +17,7 @@ class LoadMore extends React.Component {
 
     render() {
         return (
-            <div className="load-more loading-pos" ref="wrapper">
+            <div className="load-more loading-pos" ref="wrapper_more">
                 {
                     this.props.isLoadingMore
                     ? <div className="y_loading"></div>
@@ -34,7 +34,8 @@ class LoadMore extends React.Component {
     componentDidMount() {
         // 使用滚动时自动加载更多
         const loadMoreFn = this.props.loadMoreFn;
-        const wrapper = this.refs.wrapper;
+        const wrapper = this.refs.wrapper_more;
+        console.log(wrapper);
         let timeoutId;
         function callback() {
             const top = wrapper.getBoundingClientRect().top && wrapper.getBoundingClientRect().top - 500;

@@ -3,7 +3,7 @@
  */
 
 import React from 'react'
-import { Link }  from 'react-router'
+import { Link,IndexLink }  from 'react-router'
 
 class Item extends React.Component {
     constructor(props, context) {
@@ -11,10 +11,12 @@ class Item extends React.Component {
     }
     render() {
         return (
-            <li className={ this.props.dateType === this.props.newType?'on':''}>
+            <li>
                 { this.props.dateType === this.props.newType
                     ? this.props.data
-                    :<Link to={this.props.data.url}>{this.props.data.title}</Link>
+                    : this.props.data.index ==0
+                        ?<IndexLink to={this.props.data.url} activeClassName="active">{this.props.data.title}</IndexLink>
+                        :<Link to={this.props.data.url} activeClassName="active">{this.props.data.title}</Link>
                  }
                 <i className="tri"></i>
             </li>

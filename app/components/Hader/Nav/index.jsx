@@ -3,7 +3,7 @@
  */
 
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, IndexLink } from 'react-router'
 
 import Item from './Item'
 
@@ -14,7 +14,8 @@ class Header extends React.Component {
             nav:{
                 'main' : {
                     'title': '首页',
-                    'url': '/'
+                    'url': '/',
+                    index:0
                 },
                 'bangdan' : {
                     'title' : '榜单',

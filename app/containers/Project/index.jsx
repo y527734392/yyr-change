@@ -116,7 +116,7 @@ class Project extends React.Component {
     };
     // 发起众筹
     loginHandle(username) {
-        // 
+        //
 
     };
 }

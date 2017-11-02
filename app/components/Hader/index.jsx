@@ -21,8 +21,10 @@ class Header extends React.Component {
         }
     }
     render() {
+
         return (
             <div id="header" className="sns-header">
+
                 <hgroup className="cf clearfix">
                     <Link className="logo" to="/">百度音乐人</Link>
                     <Nav data="banner" />

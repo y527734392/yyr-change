@@ -3,6 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
+var es3ifyPlugin = require('es3ify-webpack-plugin');
 var dirVars = require('../base/dir-vars.config.js');
 var pageArr = require('../base/page-entries.config.js');
 //var HashOutput = require('webpack-plugin-hash-output');
@@ -36,6 +37,9 @@ var configPlugins = [
     new ExtractTextPlugin('static/css/[name]-[contenthash].css',{
         allChunks: false
     }),
+
+    /* 兼容ie8 */
+    new es3ifyPlugin(),
 
     // 添加三个插件热加载
     new webpack.optimize.OccurrenceOrderPlugin(),

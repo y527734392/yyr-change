@@ -11,12 +11,12 @@ import { Provider } from 'react-redux'
 import configureStore from 'reduxStore/configStore'
 
 import RouteMap from './router/routerMap'
-const history = createHistory()
 
 /*兼容ie start*/
 require('es5-shim');
 require('es5-shim/es5-sham');
 require('console-polyfill');
+require('json3');
 require('fetch-ie8');
 require('babel-polyfill');
 /*兼容ie end*/
