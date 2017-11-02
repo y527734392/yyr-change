@@ -1,8 +1,6 @@
 /**
  * Created by muyi on 2017/9/15.
  */
-
-
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, browserHistory } from 'react-router';
@@ -20,7 +18,6 @@ require('json3');
 require('fetch-ie8');
 require('babel-polyfill');
 /*兼容ie end*/
-
 
 //common-css
 import 'less/main.less';

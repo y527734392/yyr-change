@@ -27,17 +27,20 @@ class TopSubNav extends React.Component {
                 },
                 'song_musician' : {
                     'title' : '百度原创音乐榜',
-                    'url' : '/top/song',
+                    'url' : '/top/song/total',
+	                'type':'total',
                     'weight':true
                 },
                 'song_gufeng' : {
                     'title' : '古风榜',
                     'url' : '/top/song/gufeng',
+	                'type':'gufeng',
                     'weight':true
                 },
                 'song_indie':{
                     'title' : '独立音乐榜',
                     'url' : '/top/song/indie',
+	                'type':'indie',
                     'weight':true
                 },
                 'song_pop' : {

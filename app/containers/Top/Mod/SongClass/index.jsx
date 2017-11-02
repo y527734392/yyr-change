@@ -17,8 +17,8 @@ import TopSubNav from 'components/TopSubNav'
 //content
 class SongMusician extends React.Component {
 
-    render() {
 
+    render() {
         return (
             <div className="songClass">
                 <TopSubNav yt-data-type="song_musician" />

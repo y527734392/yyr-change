@@ -12,33 +12,34 @@ import { bindActionCreators } from 'redux'
 import * as Actions from 'reduxActions/index'
 
 import Events from 'components/Events'
+import Criteria from './Criteria'
 
 /**
  * css
  */
-//import 'lessDir/containers/Project';
+import 'less/containers/Show';
 
 //content
 class Show extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 		this.state = {
-			data: null,
+			showListData: null,
+			criteriaData: null,
 			initDone: false
 		}
 	}
 
 	render() {
 		return (
-			<div className="project-content">
-				<div className="listtop clearfix">
-					<h4 className="title">全部</h4>
-					{this.props.userinfo.un}
-					<div className="creat-project" onClick={this.loginHandle.bind(this)}>发起众筹</div>
-				</div>
+			<div className="show-content">
+
 				{
 					this.state.initDone
-						?<Events yt-data-yt-data-events={this.state.data.list} />
+						?<div className="show-list">
+							<Criteria yt-data-criteria={this.state.criteriaData}/>
+							<Events yt-data-events={this.state.showListData.list} />
+						</div>
 						:'加载中。。。'
 
 				}
@@ -47,13 +48,33 @@ class Show extends React.Component {
 		)
 	}
 	componentWillMount(){
-		_.api('/app/showstart/list',{
+		_.api('/plaza/show/list',{
 			method:'post',
+			data:{
+				start_time:this.props.params.start_time,
+				end_time:this.props.params.end_time,
+				page:this.props.params.page,
+			}
+
 		}).then((rs)=>{
 			if(rs.error_code === 22000){
 				this.setState({
-					data: rs.data,
-					initDone: true
+					showListData: rs.data,
+				})
+				_.api('/plaza/show/criteria',{
+					method:'post',
+					data:{
+						start_time:this.props.params.start_time,
+						end_time:this.props.params.end_time,
+						page:this.props.params.page,
+					}
+				}).then((rs)=>{
+					if(rs.error_code === 22000){
+						this.setState({
+							criteriaData: rs.data,
+							initDone: true
+						})
+					}
 				})
 			}
 		});

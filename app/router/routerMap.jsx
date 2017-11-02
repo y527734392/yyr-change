@@ -12,6 +12,7 @@ import Top from '../containers/Top' //基础
 import SongAll from '../containers/Top/Mod/SongAll' //全部
 import SongClass from '../containers/Top/Mod/SongClass' //分类 (原创、古风等)
 import SongClassDay from '../containers/Top/Mod/SongClass/SongClassDay' //日榜
+import SongClassWeek from '../containers/Top/Mod/SongClass/SongClassWeek' //日榜
 //import SongMusicianDay from '../containers/Top/Mod/SongMusician/SongMusicianWeek' //周榜
 
 /*歌手*/
@@ -48,16 +49,17 @@ class RouteMap extends React.Component {
                         <IndexRoute component={Home}/>
                         <Route path="/top" component={Top} >
                             <IndexRoute component={SongAll}/>
-                            <Route exact strict path="/top/song" component={SongClass}>
+                            <Route exact strict path="/top/song(/:type)" component={SongClass}>
                                 <IndexRoute component={SongClassDay}/>
-                                <Route exact strict path="/top/song/day" component={SongClassDay} />
+                                <Route path="/top/song/:type/day" component={SongClassDay} />
+                                <Route exact strict path="/top/song/:type/week(/:y)(/:p)" component={SongClassWeek} />
                             </Route>
                         </Route>
                         <Route path="/indie/musician" component={Indie} >
                             <IndexRoute component={ArtistAll}/>
                         </Route>
-                        <Route exact strict path="/project" component={Project} />
-                        <Route path="/show" component={Show} />
+                        <Route path="/project" component={Project} />
+                        <Route path="/show(/:start_time)(/:end_time)(/:page)(/:year_time)" component={Show} />
                         <Route path="/login" component={Login} />
 
                     {/*<Route exact strict path="/admin/banner" component={Banner} />
@@ -67,7 +69,6 @@ class RouteMap extends React.Component {
                         <Route exact strict path="/admin/productedit/:set" component={ProductSet} />*/}
                         <Route exact strict path="*" component={NotFound} />
                 </Route>
-
             </Router>
         )
     }
